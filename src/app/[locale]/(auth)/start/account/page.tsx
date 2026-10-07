@@ -9,6 +9,7 @@ import { AuthTopBar, BackLink, StepIndicator } from '@/components/auth/auth-top-
 import { Stage } from '@/components/layout/stage';
 import { SocialButtons } from '@/components/auth/social-buttons';
 import { PlanSummary } from '@/components/auth/plan-summary';
+import { OnboardingSplit } from '@/components/auth/onboarding-split';
 
 export const generateMetadata = metadataTitle('onboarding.account.title');
 
@@ -17,12 +18,7 @@ function AccountView() {
   const ta = useTranslations('auth');
   return (
     <Stage topBar={<AuthTopBar start={<BackLink href={ROUTES.startDate} />} center={<StepIndicator current={3} partial />} />}>
-      <div className="grid flex-1 items-center gap-20 px-5 pt-6 pb-12 lg:grid-cols-[1fr_420px] lg:px-35">
-        <div className="flex max-w-[440px] flex-col gap-6">
-          <div className="flex flex-col gap-2.5">
-            <h1 className="m-0 text-[40px] leading-[1.05] font-medium tracking-[-0.045em]">{t('title')}</h1>
-            <p className="m-0 text-base leading-[1.55] text-ink-2">{t('text')}</p>
-          </div>
+      <OnboardingSplit title={t('title')} text={t('text')} aside={<PlanSummary />}>
           <Field label={t('name')} htmlFor="name">
             <TextInput id="name" name="name" defaultValue={MOCK_USER.firstName} autoComplete="given-name" />
           </Field>
@@ -32,11 +28,9 @@ function AccountView() {
           <Checkbox id="consent" defaultChecked>
             {t.rich('consent', { terms: (c) => <a href="#">{c}</a>, privacy: (c) => <a href="#">{c}</a> })}
           </Checkbox>
-          <ButtonLink href={ROUTES.startVerify} arrow block>{ta('sendCode')}</ButtonLink>
+          <ButtonLink href={ROUTES.startVerify} size="md" arrow block className="h-11 rounded-[12px]">{ta('sendCode')}</ButtonLink>
           <SocialButtons />
-        </div>
-        <PlanSummary />
-      </div>
+      </OnboardingSplit>
     </Stage>
   );
 }

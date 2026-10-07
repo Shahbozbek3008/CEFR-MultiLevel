@@ -19,7 +19,7 @@ type FormatCardProps = { skill: Skill; wide: boolean; children: ReactNode };
 function FormatCard({ skill, wide, children }: FormatCardProps) {
   const t = useTranslations('landing.format.cards');
   return (
-    <StaggerItem className={cn('flex', wide ? 'md:flex-[7_1_440px]' : 'md:flex-[5_1_320px]')}>
+    <StaggerItem className={cn('flex min-w-0', wide ? 'md:flex-[7_1_440px]' : 'md:flex-[5_1_320px]')}>
       <Spotlight className="group flex w-full flex-col gap-[18px] rounded-card bg-surface p-5 shadow-e0 transition-[box-shadow,translate] duration-(--t-slow) ease-out-expo hover:-translate-y-1 hover:shadow-e2 md:min-h-[340px] md:gap-8 md:rounded-card-lg md:p-8">
         <div className="flex flex-col gap-1.5 md:gap-2">
           <div className="flex items-center justify-between">
@@ -114,7 +114,7 @@ function SpeakingDemo() {
         <span className="absolute inset-0 animate-ping-soft rounded-full bg-error/15" />
         <span className="size-3 rounded bg-error md:size-4 md:rounded-[5px]" />
       </span>
-      <Waveform bars={32} played={20} live className="h-8 md:h-10" />
+      <Waveform progress={0.62} live className="h-8 md:h-10" />
       <span className="font-mono text-[11px] text-ink-2 md:text-xs">00:36</span>
     </div>
   );

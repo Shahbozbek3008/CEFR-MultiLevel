@@ -2,7 +2,7 @@
 
 import { useId } from 'react';
 import { useTranslations } from 'next-intl';
-import { ChartLine, House, Layers, Sparkles, UserRound, type LucideIcon } from 'lucide-react';
+import { Search, Sparkles } from 'lucide-react';
 import { Link, usePathname } from '@/i18n/navigation';
 import { ROUTES } from '@/lib/constants';
 import { MOCK_USER } from '@/lib/mock/user';
@@ -10,29 +10,37 @@ import { cn } from '@/lib/cn';
 import { Icon } from '@/components/ui/icon';
 import { Logo } from '@/components/ui/logo';
 import { ButtonLink } from '@/components/ui/button';
-import { Avatar } from '@/components/ui/avatar';
 import { ActivePill } from '@/components/motion/active-pill';
+import { APP_NAV } from './app-nav';
+import { UserMenu } from './user-menu';
 
-type NavItem = { key: 'home' | 'tests' | 'progress' | 'profile'; href: string; icon: LucideIcon; match: (p: string) => boolean };
+function SearchTrigger() {
+  const t = useTranslations('app');
+  return (
+    <button
+      type="button"
+      className="flex h-9 w-full items-center gap-2 rounded-[10px] bg-surface px-2.5 text-[13px] text-ink-3 shadow-[0_0_0_1px_rgba(20,22,30,.07),0_1px_2px_rgba(20,22,30,.04)] transition-[box-shadow,color] duration-(--t-fast) hover:text-ink-2 hover:shadow-[0_0_0_1px_rgba(20,22,30,.12),0_1px_2px_rgba(20,22,30,.04)]"
+    >
+      <Icon as={Search} size={14} strokeWidth={1.7} />
+      <span className="flex-1 text-left">{t('search')}</span>
+      <kbd className="flex h-5 items-center rounded-[5px] bg-surface-sunken px-1.5 font-mono text-[10px] text-ink-3">⌘K</kbd>
+    </button>
+  );
+}
 
-const NAV: readonly NavItem[] = [
-  { key: 'home', href: ROUTES.dashboard, icon: House, match: (p) => p === ROUTES.dashboard },
-  { key: 'tests', href: ROUTES.catalog, icon: Layers, match: (p) => p.startsWith(ROUTES.catalog) || p.startsWith('/app/results') },
-  { key: 'progress', href: ROUTES.progress, icon: ChartLine, match: (p) => p.startsWith(ROUTES.progress) },
-  { key: 'profile', href: ROUTES.settings, icon: UserRound, match: (p) => p.startsWith(ROUTES.settings) || p.startsWith(ROUTES.billing) },
-];
-
-function UpsellCard() {
+function UpgradeCard() {
   const t = useTranslations('app.upsell');
   return (
-    <div className="border-beam relative mt-auto flex animate-fade-up flex-col gap-2.5 overflow-hidden rounded-card-sm bg-surface p-4 shadow-e0 [--beam-duration:7s] [animation-delay:300ms]">
-      <span className="pointer-events-none absolute -top-10 -right-10 size-28 rounded-full bg-[radial-gradient(closest-side,var(--green-100),transparent)]" />
-      <span className="relative grid size-8 place-items-center rounded-[10px] bg-green-100 text-green-text">
-        <Icon as={Sparkles} size={15} />
-      </span>
-      <span className="relative text-sm font-medium">{t('title')}</span>
+    <div className="relative flex flex-col gap-3 overflow-hidden rounded-[14px] bg-surface p-3.5 shadow-[0_0_0_1px_rgba(20,22,30,.07),0_8px_20px_-14px_rgba(20,22,30,.25)]">
+      <span className="pointer-events-none absolute -top-12 -right-12 size-32 rounded-full bg-[radial-gradient(closest-side,oklch(0.93_0.08_135),transparent)]" />
+      <div className="relative flex items-center gap-2">
+        <span className="grid size-6 place-items-center rounded-[7px] bg-action text-white shadow-[inset_0_1px_0_rgba(255,255,255,.25)]">
+          <Icon as={Sparkles} size={12} strokeWidth={2} />
+        </span>
+        <span className="text-[13px] font-medium">{t('title')}</span>
+      </div>
       <span className="relative text-xs leading-normal text-ink-2">{t('text')}</span>
-      <ButtonLink href={ROUTES.billing} size="xs" className="relative h-9 rounded-[11px] px-3 text-[13px] shadow-[inset_0_1px_0_rgba(255,255,255,.22)]">
+      <ButtonLink href={ROUTES.billing} size="xs" className="relative h-8 rounded-[9px] text-[12.5px]">
         {t('cta')}
       </ButtonLink>
     </div>
@@ -46,37 +54,40 @@ export function Sidebar() {
   const layoutId = useId();
 
   return (
-    <aside className="sticky top-0 flex h-dvh w-(--sidebar-w) shrink-0 flex-col gap-7 bg-bg-sidebar px-4 py-6 shadow-[1px_0_0_rgba(20,22,30,.06)]">
-      <Link href={ROUTES.dashboard} className="px-2 transition-opacity hover:opacity-80"><Logo /></Link>
-      <nav className="flex flex-col gap-0.5" aria-label={t('nav.label')}>
-        {NAV.map((item) => {
-          const active = item.match(pathname);
-          return (
-            <Link
-              key={item.key}
-              href={item.href}
-              aria-current={active ? 'page' : undefined}
-              className={cn(
-                'group relative isolate flex h-10 items-center gap-3 rounded-[12px] px-3 text-sm transition-colors duration-(--t-base)',
-                active ? 'font-medium text-ink hover:text-ink' : 'text-ink-2 hover:bg-hover hover:text-ink',
-              )}
-            >
-              {active && <ActivePill layoutId={layoutId} className="rounded-[12px] bg-surface shadow-[0_0_0_1px_rgba(20,22,30,.06),0_1px_2px_rgba(20,22,30,.04),0_8px_16px_-12px_rgba(20,22,30,.2)]" />}
-              <Icon as={item.icon} className={cn('transition-[color,scale] duration-(--t-sheet) ease-spring group-hover:scale-110', active && 'text-green-text')} />
-              {t(`nav.${item.key}`)}
-            </Link>
-          );
-        })}
+    <aside className="sticky top-0 flex h-dvh w-(--sidebar-w) shrink-0 flex-col gap-5 px-3 pt-4 pb-3">
+      <Link href={ROUTES.dashboard} className="flex h-9 items-center px-2 transition-opacity hover:opacity-80"><Logo /></Link>
+      <SearchTrigger />
+      <nav className="flex flex-col gap-5" aria-label={t('nav.label')}>
+        {APP_NAV.map((group) => (
+          <div key={group.key} className="flex flex-col gap-px">
+            <span className="px-2.5 pb-1.5 text-[11px] font-medium text-ink-3">{t(`nav.${group.key}`)}</span>
+            {group.items.map((item) => {
+              const active = item.match(pathname);
+              return (
+                <Link
+                  key={item.key}
+                  href={item.href}
+                  aria-current={active ? 'page' : undefined}
+                  className={cn(
+                    'relative isolate flex h-8 items-center gap-2.5 rounded-[9px] px-2.5 text-[13px] transition-colors duration-(--t-fast)',
+                    active ? 'font-medium text-ink hover:text-ink' : 'text-ink-2 hover:bg-[rgba(20,22,30,.045)] hover:text-ink',
+                  )}
+                >
+                  {active && <ActivePill layoutId={layoutId} className="rounded-[9px] bg-surface shadow-[0_0_0_1px_rgba(20,22,30,.07),0_1px_3px_rgba(20,22,30,.06)]" />}
+                  <Icon as={item.icon} size={16} strokeWidth={active ? 1.9 : 1.6} className={active ? 'text-ink' : 'text-ink-3'} />
+                  <span className="flex-1">{t(`nav.${item.key}`)}</span>
+                  {item.badge && (
+                    <span className="grid h-[18px] min-w-[18px] place-items-center rounded-[6px] bg-green-100 px-1 font-mono text-[10px] font-medium text-green-text">{item.badge}</span>
+                  )}
+                </Link>
+              );
+            })}
+          </div>
+        ))}
       </nav>
-
-      {plan === 'free' && <UpsellCard />}
-
-      <div className={cn('flex items-center gap-2.5 rounded-[12px] px-2 py-1.5 transition-colors hover:bg-hover', plan === 'pro' && 'mt-auto')}>
-        <Avatar initial={MOCK_USER.initial} size={32} />
-        <div className="flex flex-col leading-[1.3]">
-          <span className="text-[13px] font-medium">{MOCK_USER.firstName} {MOCK_USER.lastName}</span>
-          <span className="text-[11px] text-ink-3">{t(`plan.${plan}`)}</span>
-        </div>
+      <div className="mt-auto flex flex-col gap-3">
+        {plan === 'free' && <UpgradeCard />}
+        <UserMenu plan={plan} />
       </div>
     </aside>
   );

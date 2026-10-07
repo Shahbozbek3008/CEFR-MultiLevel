@@ -28,7 +28,11 @@
       "home": "Home",
       "tests": "Tests",
       "progress": "Progress",
-      "profile": "Profile"
+      "profile": "Profile",
+      "billing": "Billing",
+      "help": "Help",
+      "workspace": "Workspace",
+      "account": "Account"
     },
     "upsell": {
       "title": "Upgrade to Pro",
@@ -38,6 +42,18 @@
     "plan": {
       "free": "Free plan",
       "pro": "Pro · 3 months"
+    },
+    "search": "Search",
+    "topbar": {
+      "notifications": "Notifications",
+      "newTest": "New test",
+      "exam": "{days} days left"
+    },
+    "user": {
+      "settings": "Settings",
+      "billing": "Billing & plans",
+      "logout": "Log out",
+      "menu": "User menu"
     }
   },
   "landing": {
@@ -397,7 +413,8 @@
       "label": "Continue",
       "left": "{time} left",
       "meta": "{section} · Part {part} · {answered}/{total} questions",
-      "cta": "Continue"
+      "cta": "Continue",
+      "progress": "{value}% complete"
     },
     "recommended": {
       "title": "Recommended tests",
@@ -413,7 +430,58 @@
         "new": "New",
         "weak": "Weak section",
         "done": "Completed"
+      },
+      "subtitle": "Picked for your weak spots",
+      "columns": {
+        "test": "Test",
+        "duration": "Duration",
+        "status": "Status",
+        "result": "Result"
       }
+    },
+    "subtitle": "Your plan for today is ready. {days} days until the exam.",
+    "kpi": {
+      "score": "Overall score",
+      "scoreHint": "vs. last test",
+      "exam": "Until exam",
+      "examHint": "{date} · Target {level}",
+      "streak": "Daily streak",
+      "streakUnit": "days",
+      "streakHint": "Best: {best} days",
+      "time": "This week",
+      "timeUnit": "min",
+      "timeHint": "Goal: {goal} min"
+    },
+    "chart": {
+      "title": "Score trend",
+      "subtitle": "Last {count} mock tests"
+    },
+    "skills": {
+      "title": "By section",
+      "subtitle": "on the 0–75 scale",
+      "weak": "Weak"
+    },
+    "activity": {
+      "title": "Weekly activity",
+      "subtitle": "Minutes studied per day",
+      "goal": "Goal",
+      "minutes": "{value} min"
+    },
+    "plan": {
+      "title": "Today's plan",
+      "progress": "{done}/{total} done",
+      "minutes": "{value} min",
+      "items": {
+        "reading": "Reading · True / False / Not Given",
+        "writing": "Writing Task 2 · introduction",
+        "vocab": "Vocabulary review · 20 words"
+      }
+    },
+    "insight": {
+      "label": "AI insight",
+      "title": "Writing is your main growth area",
+      "text": "Subject–verb agreement errors cost you 4–6 points. Three short drills will bring you closer to B2.",
+      "cta": "Start drill"
     }
   },
   "results": {
@@ -530,7 +598,16 @@
     "sections": "Sections",
     "period": "over 3 months",
     "history": "History",
-    "all": "See all"
+    "all": "See all",
+    "columns": {
+      "date": "Date",
+      "test": "Test",
+      "score": "Score",
+      "level": "Level",
+      "change": "Change"
+    },
+    "historySubtitle": "Recent attempts",
+    "sectionsSubtitle": "Growth over 3 months"
   },
   "settings": {
     "title": "Settings",

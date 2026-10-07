@@ -21,20 +21,20 @@ export function ExamCalendar({ year, month, officialDays, defaultSelected }: Exa
   const monthName = t('months').split(',')[month];
 
   return (
-    <div className="flex flex-col gap-5 rounded-card-lg bg-surface p-7 shadow-[0_0_0_1px_rgba(20,22,30,.06),0_30px_60px_-30px_rgba(20,22,30,.18)]">
+    <div className="flex flex-col gap-4 rounded-[20px] bg-surface p-5 shadow-[0_0_0_1px_rgba(20,22,30,.06),0_24px_48px_-28px_rgba(20,22,30,.22)]">
       <div className="flex items-center justify-between">
-        <span className="text-[17px] font-medium">{t('monthTitle', { month: monthName, year })}</span>
+        <span className="text-[15px] font-medium">{t('monthTitle', { month: monthName, year })}</span>
         <div className="flex gap-1.5">
           <IconButton icon={ChevronLeft} label={t('prev')} size="xs" iconSize={14} className="text-ink-2" />
           <IconButton icon={ChevronRight} label={t('next')} size="xs" iconSize={14} className="text-ink-2" />
         </div>
       </div>
-      <div className="grid grid-cols-7 gap-1 text-center font-mono text-[11px] text-ink-3">
+      <div className="grid grid-cols-7 gap-1 text-center text-[11px] text-ink-3">
         {weekdays.map((d) => <span key={d}>{d}</span>)}
       </div>
       <div className="grid grid-cols-7 gap-1">
         {cells.map((n, i) => {
-          if (n < 1 || n > days) return <span key={i} className="h-12" />;
+          if (n < 1 || n > days) return <span key={i} className="aspect-square" />;
           const isSelected = n === selected;
           const official = officialDays.includes(n);
           return (
@@ -44,19 +44,21 @@ export function ExamCalendar({ year, month, officialDays, defaultSelected }: Exa
               aria-pressed={isSelected}
               onClick={() => setSelected(n)}
               className={cn(
-                'relative isolate grid h-12 place-items-center rounded-[14px] text-sm transition-[background-color,color,scale] duration-(--t-base) ease-out-expo active:scale-95',
-                isSelected ? 'font-medium text-white' : official ? 'bg-blue-50 font-medium text-blue-text' : 'text-ink-body hover:bg-surface-sunken',
+                'relative isolate grid aspect-square place-items-center rounded-[10px] text-[13px] tabular-nums transition-[background-color,color,scale] duration-(--t-base) ease-out-expo active:scale-95',
+                isSelected ? 'font-medium text-white' : 'text-ink-body hover:bg-surface-sunken',
+                official && !isSelected && 'font-medium text-blue-text',
               )}
             >
-              {isSelected && <ActivePill layoutId={layoutId} className="rounded-[14px] bg-action shadow-action-sm" />}
+              {isSelected && <ActivePill layoutId={layoutId} className="rounded-[10px] bg-action shadow-action-sm" />}
               {n}
+              {official && <span className={cn('absolute bottom-1.5 left-1/2 size-1 -translate-x-1/2 rounded-full', isSelected ? 'bg-white' : 'bg-blue')} />}
             </button>
           );
         })}
       </div>
-      <div className="flex gap-4 pt-[14px] text-xs text-ink-2 shadow-[0_-1px_0_var(--track)]">
-        <span className="flex items-center gap-1.5"><span className="size-2 rounded-full bg-blue" />{t('official')}</span>
-        <span className="flex items-center gap-1.5"><span className="size-2 rounded-full bg-green" />{t('selected')}</span>
+      <div className="flex gap-4 pt-3 text-xs text-ink-2 shadow-[0_-1px_0_var(--track)]">
+        <span className="flex items-center gap-1.5"><span className="size-1.5 rounded-full bg-blue" />{t('official')}</span>
+        <span className="flex items-center gap-1.5"><span className="size-1.5 rounded-full bg-green" />{t('selected')}</span>
       </div>
     </div>
   );

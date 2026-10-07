@@ -113,7 +113,7 @@ function ChartCard() {
   return (
     <div className="flex flex-col gap-2 rounded-card bg-surface px-5 pt-4 pb-1 shadow-[0_0_0_1px_rgba(20,22,30,.05)] lg:col-span-2">
       <span className="text-xs text-ink-2">{t('overall')}</span>
-      <LineChart data={PROGRESS_HISTORY.scores} thresholds={THRESHOLDS} label={t('chartLabel')} />
+      <LineChart data={PROGRESS_HISTORY.scores} thresholds={THRESHOLDS} label={t('chartLabel')} height={200} />
     </div>
   );
 }

@@ -25,7 +25,7 @@ function Player() {
       <button type="button" aria-label="Play" className="shine grid size-12 shrink-0 place-items-center rounded-full bg-action text-white shadow-[0_10px_20px_-10px_oklch(0.45_0.14_140/.7)] transition-[scale] duration-(--t-sheet) ease-spring hover:scale-110 active:scale-95">
         <Play size={15} fill="currentColor" strokeWidth={0} aria-hidden />
       </button>
-      <Waveform bars={48} played={14} gap={3} className="h-11" />
+      <Waveform progress={0.3} className="h-11" />
       <span className="font-mono text-[13px] text-ink-2">{SPEAKING.position} / {SPEAKING.duration}</span>
       <span className="flex h-[30px] items-center rounded-[9px] bg-surface-sunken px-2.5 font-mono text-xs">1.0×</span>
     </Card>

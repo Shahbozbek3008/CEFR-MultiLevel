@@ -28,7 +28,11 @@
       "home": "Главная",
       "tests": "Тесты",
       "progress": "Прогресс",
-      "profile": "Профиль"
+      "profile": "Профиль",
+      "billing": "Подписка",
+      "help": "Помощь",
+      "workspace": "Рабочее пространство",
+      "account": "Аккаунт"
     },
     "upsell": {
       "title": "Перейдите на Pro",
@@ -38,6 +42,18 @@
     "plan": {
       "free": "Бесплатный тариф",
       "pro": "Pro · 3 месяца"
+    },
+    "search": "Поиск",
+    "topbar": {
+      "notifications": "Уведомления",
+      "newTest": "Новый тест",
+      "exam": "Осталось {days} дн."
+    },
+    "user": {
+      "settings": "Настройки",
+      "billing": "Подписка и оплата",
+      "logout": "Выйти",
+      "menu": "Меню пользователя"
     }
   },
   "landing": {
@@ -397,7 +413,8 @@
       "label": "Продолжить",
       "left": "осталось {time}",
       "meta": "{section} · часть {part} · {answered}/{total} вопросов",
-      "cta": "Продолжить"
+      "cta": "Продолжить",
+      "progress": "Выполнено {value}%"
     },
     "recommended": {
       "title": "Рекомендованные тесты",
@@ -413,7 +430,58 @@
         "new": "Новый",
         "weak": "Слабый раздел",
         "done": "Завершён"
+      },
+      "subtitle": "Подобраны под ваши слабые места",
+      "columns": {
+        "test": "Тест",
+        "duration": "Длительность",
+        "status": "Статус",
+        "result": "Результат"
       }
+    },
+    "subtitle": "План на сегодня готов. До экзамена {days} дн.",
+    "kpi": {
+      "score": "Общий балл",
+      "scoreHint": "к прошлому тесту",
+      "exam": "До экзамена",
+      "examHint": "{date} · Цель {level}",
+      "streak": "Серия дней",
+      "streakUnit": "дн.",
+      "streakHint": "Рекорд: {best} дн.",
+      "time": "На этой неделе",
+      "timeUnit": "мин",
+      "timeHint": "Цель: {goal} мин"
+    },
+    "chart": {
+      "title": "Динамика балла",
+      "subtitle": "Последние {count} пробных тестов"
+    },
+    "skills": {
+      "title": "По секциям",
+      "subtitle": "по шкале 0–75",
+      "weak": "Слабая"
+    },
+    "activity": {
+      "title": "Активность за неделю",
+      "subtitle": "Минуты занятий в день",
+      "goal": "Цель",
+      "minutes": "{value} мин"
+    },
+    "plan": {
+      "title": "План на сегодня",
+      "progress": "Выполнено {done}/{total}",
+      "minutes": "{value} мин",
+      "items": {
+        "reading": "Reading · True / False / Not Given",
+        "writing": "Writing Task 2 · вступление",
+        "vocab": "Повтор слов · 20 слов"
+      }
+    },
+    "insight": {
+      "label": "Совет AI",
+      "title": "Writing — главная точка роста",
+      "text": "Ошибки согласования глаголов снижают балл на 4–6. Три коротких упражнения приблизят вас к B2.",
+      "cta": "Начать упражнение"
     }
   },
   "results": {
@@ -530,7 +598,16 @@
     "sections": "Разделы",
     "period": "за 3 месяца",
     "history": "История",
-    "all": "Все"
+    "all": "Все",
+    "columns": {
+      "date": "Дата",
+      "test": "Тест",
+      "score": "Балл",
+      "level": "Уровень",
+      "change": "Изменение"
+    },
+    "historySubtitle": "Последние попытки",
+    "sectionsSubtitle": "Рост за 3 месяца"
   },
   "settings": {
     "title": "Настройки",

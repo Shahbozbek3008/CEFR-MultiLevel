@@ -8,6 +8,7 @@ import { usePathname, useRouter } from '@/i18n/navigation';
 import { routing, type Locale } from '@/i18n/routing';
 import { cn } from '@/lib/cn';
 import { Icon } from '@/components/ui/icon';
+import { menuContent, menuItem } from '@/components/ui/menu';
 
 const NAMES: Record<Locale, string> = {
   uz: "O'zbekcha",
@@ -52,7 +53,7 @@ export function LocaleSwitcher({ variant = 'full', align = 'end', side = 'bottom
           align={align}
           side={side}
           sideOffset={6}
-          className="z-50 min-w-[148px] origin-(--radix-dropdown-menu-content-transform-origin) rounded-[11px] bg-surface p-1 shadow-[0_0_0_1px_rgba(20,22,30,.08),0_12px_32px_-12px_rgba(20,22,30,.22)] data-[state=closed]:animate-menu-out data-[state=open]:animate-menu-in"
+          className={menuContent}
         >
           <DropdownMenu.RadioGroup value={locale} onValueChange={change}>
             {routing.locales.map((l) => (
@@ -60,7 +61,7 @@ export function LocaleSwitcher({ variant = 'full', align = 'end', side = 'bottom
                 key={l}
                 value={l}
                 lang={l}
-                className="flex h-8 cursor-pointer items-center justify-between gap-4 rounded-[7px] px-2.5 text-[13px] text-ink-2 outline-none select-none data-highlighted:bg-hover data-highlighted:text-ink data-[state=checked]:text-ink"
+                className={cn(menuItem, 'justify-between gap-4')}
               >
                 {NAMES[l]}
                 <DropdownMenu.ItemIndicator>

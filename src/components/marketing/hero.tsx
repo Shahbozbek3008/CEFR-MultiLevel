@@ -156,7 +156,7 @@ function HeroVisual() {
             <span className="absolute inset-0 animate-ping-soft rounded-full bg-error/20" />
             <span className="size-2.5 rounded-[3px] bg-error" />
           </span>
-          <Waveform bars={14} played={14} live className="h-6" />
+          <Waveform progress={1} live className="h-6" />
           <span className="font-mono text-[10px] text-ink-2">0:36</span>
         </div>
       </FloatingCard>

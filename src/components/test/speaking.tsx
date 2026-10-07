@@ -49,7 +49,7 @@ export function Recorder() {
         </span>
         {t('recording')}
       </span>
-      <Waveform bars={48} played={30} gap={3} live className="h-14" />
+      <Waveform progress={0.62} live className="h-14" />
       <span className="font-mono text-sm text-ink-2">{SPEAKING_TASK.elapsed} / {SPEAKING_TASK.limit}</span>
       <div className="flex items-center gap-2.5">
         <IconButton icon={RotateCcw} label={t('restart')} size="lg" />

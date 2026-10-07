@@ -28,7 +28,11 @@
       "home": "Asosiy",
       "tests": "Testlar",
       "progress": "Progress",
-      "profile": "Profil"
+      "profile": "Profil",
+      "billing": "Obuna",
+      "help": "Yordam",
+      "workspace": "Ish maydoni",
+      "account": "Hisob"
     },
     "upsell": {
       "title": "Pro'ga o'ting",
@@ -38,6 +42,18 @@
     "plan": {
       "free": "Bepul tarif",
       "pro": "Pro · 3 oylik"
+    },
+    "search": "Qidirish",
+    "topbar": {
+      "notifications": "Bildirishnomalar",
+      "newTest": "Yangi test",
+      "exam": "{days} kun qoldi"
+    },
+    "user": {
+      "settings": "Sozlamalar",
+      "billing": "Obuna va to'lov",
+      "logout": "Chiqish",
+      "menu": "Foydalanuvchi menyusi"
     }
   },
   "landing": {
@@ -397,7 +413,8 @@
       "label": "Davom ettirish",
       "left": "{time} qoldi",
       "meta": "{section} · {part}-qism · {answered}/{total} savol",
-      "cta": "Davom etish"
+      "cta": "Davom etish",
+      "progress": "{value}% bajarildi"
     },
     "recommended": {
       "title": "Tavsiya etilgan testlar",
@@ -413,7 +430,58 @@
         "new": "Yangi",
         "weak": "Zaif bo'lim",
         "done": "Tugagan"
+      },
+      "subtitle": "Zaif joylaringizga qarab tanlangan",
+      "columns": {
+        "test": "Test",
+        "duration": "Davomiyligi",
+        "status": "Holat",
+        "result": "Natija"
       }
+    },
+    "subtitle": "Bugungi rejangiz tayyor. Imtihongacha {days} kun qoldi.",
+    "kpi": {
+      "score": "Umumiy ball",
+      "scoreHint": "o'tgan testga nisbatan",
+      "exam": "Imtihongacha",
+      "examHint": "{date} · Maqsad {level}",
+      "streak": "Kunlik seriya",
+      "streakUnit": "kun",
+      "streakHint": "Rekord: {best} kun",
+      "time": "Bu hafta",
+      "timeUnit": "daq",
+      "timeHint": "Maqsad: {goal} daq"
+    },
+    "chart": {
+      "title": "Ball dinamikasi",
+      "subtitle": "So'nggi {count} ta mock test"
+    },
+    "skills": {
+      "title": "Bo'limlar bo'yicha",
+      "subtitle": "0–75 shkalada",
+      "weak": "Zaif"
+    },
+    "activity": {
+      "title": "Haftalik faollik",
+      "subtitle": "Kunlik o'qish daqiqalari",
+      "goal": "Maqsad",
+      "minutes": "{value} daq"
+    },
+    "plan": {
+      "title": "Bugungi reja",
+      "progress": "{done}/{total} bajarildi",
+      "minutes": "{value} daq",
+      "items": {
+        "reading": "Reading · True / False / Not Given",
+        "writing": "Writing Task 2 · kirish qismi",
+        "vocab": "Lug'at takrorlash · 20 so'z"
+      }
+    },
+    "insight": {
+      "label": "AI tavsiyasi",
+      "title": "Writing — asosiy o'sish nuqtasi",
+      "text": "Fe'l mosligi xatolari ballingizni 4–6 ga tushiryapti. 3 ta qisqa mashq B2 ga yaqinlashtiradi.",
+      "cta": "Mashqni boshlash"
     }
   },
   "results": {
@@ -530,7 +598,16 @@
     "sections": "Bo'limlar",
     "period": "3 oy ichida",
     "history": "Tarix",
-    "all": "Barchasi"
+    "all": "Barchasi",
+    "columns": {
+      "date": "Sana",
+      "test": "Test",
+      "score": "Ball",
+      "level": "Daraja",
+      "change": "O'zgarish"
+    },
+    "historySubtitle": "So'nggi urinishlar",
+    "sectionsSubtitle": "3 oy ichidagi o'sish"
   },
   "settings": {
     "title": "Sozlamalar",
