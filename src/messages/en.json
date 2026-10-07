@@ -30,7 +30,6 @@
       "progress": "Progress",
       "profile": "Profile",
       "billing": "Billing",
-      "help": "Help",
       "workspace": "Workspace",
       "account": "Account"
     },
@@ -43,7 +42,6 @@
       "free": "Free plan",
       "pro": "Pro · 3 months"
     },
-    "search": "Search",
     "topbar": {
       "notifications": "Notifications",
       "newTest": "New test",
@@ -611,7 +609,6 @@
   },
   "settings": {
     "title": "Settings",
-    "logout": "Log out",
     "cancel": "Cancel",
     "save": "Save",
     "nav": {
@@ -630,15 +627,15 @@
       "phone": "Phone",
       "verified": "Verified",
       "email": "Email",
-      "optional": "optional"
+      "optional": "optional",
+      "title": "Personal details",
+      "subtitle": "Name and contact information"
     },
     "preferences": {
       "target": "Target level",
       "targetHint": "Your plan adapts to this level",
       "examDate": "Exam date",
       "daysLeft": "{days} days left",
-      "reminder": "Daily reminder",
-      "reminderHint": "Every day at {time}",
       "language": "Interface language",
       "languageHint": "Uzbek, Russian or English",
       "theme": "Theme",
@@ -647,6 +644,102 @@
         "light": "Light",
         "dark": "Dark",
         "system": "System"
+      }
+    },
+    "interface": {
+      "title": "Interface",
+      "subtitle": "Language and appearance"
+    },
+    "exam": {
+      "title": "Exam plan",
+      "subtitle": "Your daily plan and reminders are based on these details",
+      "daily": "Daily study time",
+      "dailyHint": "Your daily plan size is based on this"
+    },
+    "notifications": {
+      "title": "Notifications",
+      "subtitle": "Choose which messages you receive",
+      "items": {
+        "reminder": {
+          "title": "Daily reminder",
+          "hint": "Every day at {time}"
+        },
+        "weekly": {
+          "title": "Weekly report",
+          "hint": "Progress summary every Monday"
+        },
+        "results": {
+          "title": "AI results ready",
+          "hint": "When Writing and Speaking are scored"
+        },
+        "newTests": {
+          "title": "New mock tests",
+          "hint": "When a new test is added to the catalog"
+        },
+        "promo": {
+          "title": "Offers and discounts",
+          "hint": "Rarely, only the important ones"
+        }
+      },
+      "channels": {
+        "title": "Delivery channels",
+        "subtitle": "Where messages are sent",
+        "sms": "SMS",
+        "telegram": "Telegram",
+        "email": "Email"
+      }
+    },
+    "subscription": {
+      "title": "Current plan",
+      "active": "Active",
+      "renews": "Valid {date}",
+      "change": "Change plan",
+      "cancel": "Cancel subscription",
+      "method": "Payment method",
+      "methodHint": "Future payments use this method",
+      "update": "Update",
+      "history": "Payment history",
+      "historySubtitle": "Receipts were also sent via SMS",
+      "columns": {
+        "date": "Date",
+        "plan": "Plan",
+        "amount": "Amount",
+        "status": "Status"
+      },
+      "paid": "Paid",
+      "receipt": "Receipt"
+    },
+    "security": {
+      "phone": {
+        "title": "Phone number",
+        "hint": "Sign-in codes are sent to this number",
+        "change": "Change number"
+      },
+      "sessions": {
+        "title": "Active devices",
+        "subtitle": "Devices signed in to your account",
+        "current": "Current",
+        "logout": "Sign out",
+        "logoutAll": "Sign out of all devices",
+        "devices": {
+          "desktop": {
+            "name": "Chrome · Windows",
+            "meta": "Tashkent · active now"
+          },
+          "phone": {
+            "name": "CEFR Mock · iPhone",
+            "meta": "Tashkent · 2 hours ago"
+          },
+          "tablet": {
+            "name": "Safari · iPad",
+            "meta": "Samarkand · 3 days ago"
+          }
+        }
+      },
+      "danger": {
+        "title": "Delete account",
+        "hint": "All results, history and your subscription will be permanently deleted. This can't be undone.",
+        "action": "Delete account"
       }
     }
   },
@@ -661,7 +754,28 @@
     "apply": "Apply",
     "total": "Total",
     "pay": "Pay {amount} UZS",
-    "secure": "Secure payment · cancel anytime"
+    "secure": "Secure payment · cancel anytime",
+    "choosePeriod": "Billing period",
+    "choosePeriodHint": "Pick the period that fits your exam date",
+    "included": "What's included in Pro",
+    "recommended": "Recommended",
+    "oneTime": "One-time payment",
+    "subtotal": "Subtotal",
+    "dueToday": "Due today",
+    "save": "You save {amount} UZS",
+    "validUntil": "Valid",
+    "validity": {
+      "monthly": "until Oct 29, 2026",
+      "quarterly": "until Dec 29, 2026",
+      "yearly": "until Sep 29, 2027"
+    },
+    "redirect": "Payment is completed securely on the provider's page.",
+    "product": "{plan} subscription",
+    "trust": {
+      "secure": "Secure payment",
+      "cancel": "Cancel anytime",
+      "receipt": "Receipt via SMS"
+    }
   },
   "billingSuccess": {
     "title": "Pro activated",

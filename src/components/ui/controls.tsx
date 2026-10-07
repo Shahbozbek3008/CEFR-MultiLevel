@@ -50,16 +50,18 @@ export function RadioDot({ size = 22, className }: { size?: 18 | 22; className?:
 
 type RadioCardGroupProps<T extends { value: string }> = {
   items: readonly T[];
-  defaultValue: string;
+  defaultValue?: string;
+  value?: string;
+  onValueChange?: (value: string) => void;
   label: string;
   className?: string;
   itemClassName?: string;
   renderItem: (item: T) => ReactNode;
 };
 
-export function RadioCardGroup<T extends { value: string }>({ items, defaultValue, label, className, itemClassName, renderItem }: RadioCardGroupProps<T>) {
+export function RadioCardGroup<T extends { value: string }>({ items, defaultValue, value, onValueChange, label, className, itemClassName, renderItem }: RadioCardGroupProps<T>) {
   return (
-    <RadioGroup.Root defaultValue={defaultValue} aria-label={label} className={className}>
+    <RadioGroup.Root defaultValue={defaultValue} value={value} onValueChange={onValueChange} aria-label={label} className={className}>
       {items.map((item) => (
         <RadioGroup.Item
           key={item.value}

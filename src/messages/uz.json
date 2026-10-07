@@ -30,7 +30,6 @@
       "progress": "Progress",
       "profile": "Profil",
       "billing": "Obuna",
-      "help": "Yordam",
       "workspace": "Ish maydoni",
       "account": "Hisob"
     },
@@ -43,7 +42,6 @@
       "free": "Bepul tarif",
       "pro": "Pro · 3 oylik"
     },
-    "search": "Qidirish",
     "topbar": {
       "notifications": "Bildirishnomalar",
       "newTest": "Yangi test",
@@ -611,7 +609,6 @@
   },
   "settings": {
     "title": "Sozlamalar",
-    "logout": "Hisobdan chiqish",
     "cancel": "Bekor qilish",
     "save": "Saqlash",
     "nav": {
@@ -630,15 +627,15 @@
       "phone": "Telefon",
       "verified": "Tasdiqlangan",
       "email": "Email",
-      "optional": "ixtiyoriy"
+      "optional": "ixtiyoriy",
+      "title": "Shaxsiy ma'lumotlar",
+      "subtitle": "Ism va aloqa ma'lumotlari"
     },
     "preferences": {
       "target": "Maqsad daraja",
       "targetHint": "Reja shu darajaga moslashtiriladi",
       "examDate": "Imtihon sanasi",
       "daysLeft": "{days} kun qoldi",
-      "reminder": "Kunlik eslatma",
-      "reminderHint": "Har kuni {time} da",
       "language": "Interfeys tili",
       "languageHint": "O'zbekcha, ruscha yoki inglizcha",
       "theme": "Tema",
@@ -647,6 +644,102 @@
         "light": "Yorug'",
         "dark": "Qorong'i",
         "system": "Tizim"
+      }
+    },
+    "interface": {
+      "title": "Interfeys",
+      "subtitle": "Til va ko'rinish"
+    },
+    "exam": {
+      "title": "Imtihon rejasi",
+      "subtitle": "Kunlik reja va eslatmalar shu ma'lumotlarga asoslanadi",
+      "daily": "Kunlik o'qish vaqti",
+      "dailyHint": "Kunlik reja hajmi shunga qarab tuziladi"
+    },
+    "notifications": {
+      "title": "Bildirishnomalar",
+      "subtitle": "Qaysi xabarlarni olishni tanlang",
+      "items": {
+        "reminder": {
+          "title": "Kunlik eslatma",
+          "hint": "Har kuni {time} da"
+        },
+        "weekly": {
+          "title": "Haftalik hisobot",
+          "hint": "Har dushanba progress xulosasi"
+        },
+        "results": {
+          "title": "AI natijalar tayyor",
+          "hint": "Writing va Speaking baholanganda"
+        },
+        "newTests": {
+          "title": "Yangi mock testlar",
+          "hint": "Katalogga yangi test qo'shilganda"
+        },
+        "promo": {
+          "title": "Aksiya va chegirmalar",
+          "hint": "Kamdan-kam, faqat muhimlari"
+        }
+      },
+      "channels": {
+        "title": "Yetkazish kanallari",
+        "subtitle": "Xabarlar qayerga yuborilsin",
+        "sms": "SMS",
+        "telegram": "Telegram",
+        "email": "Email"
+      }
+    },
+    "subscription": {
+      "title": "Joriy tarif",
+      "active": "Faol",
+      "renews": "{date} amal qiladi",
+      "change": "Tarifni o'zgartirish",
+      "cancel": "Obunani bekor qilish",
+      "method": "To'lov usuli",
+      "methodHint": "Keyingi to'lovlar shu usul orqali",
+      "update": "O'zgartirish",
+      "history": "To'lovlar tarixi",
+      "historySubtitle": "Cheklar SMS orqali ham yuborilgan",
+      "columns": {
+        "date": "Sana",
+        "plan": "Tarif",
+        "amount": "Summa",
+        "status": "Holat"
+      },
+      "paid": "To'langan",
+      "receipt": "Chek"
+    },
+    "security": {
+      "phone": {
+        "title": "Telefon raqami",
+        "hint": "Kirish va SMS kodlar shu raqamga yuboriladi",
+        "change": "Raqamni o'zgartirish"
+      },
+      "sessions": {
+        "title": "Faol qurilmalar",
+        "subtitle": "Hisobingizga kirilgan qurilmalar",
+        "current": "Joriy",
+        "logout": "Chiqish",
+        "logoutAll": "Barcha qurilmalardan chiqish",
+        "devices": {
+          "desktop": {
+            "name": "Chrome · Windows",
+            "meta": "Toshkent · hozir faol"
+          },
+          "phone": {
+            "name": "CEFR Mock · iPhone",
+            "meta": "Toshkent · 2 soat oldin"
+          },
+          "tablet": {
+            "name": "Safari · iPad",
+            "meta": "Samarqand · 3 kun oldin"
+          }
+        }
+      },
+      "danger": {
+        "title": "Hisobni o'chirish",
+        "hint": "Barcha natijalar, tarix va obuna butunlay o'chiriladi. Bu amalni qaytarib bo'lmaydi.",
+        "action": "Hisobni o'chirish"
       }
     }
   },
@@ -661,7 +754,28 @@
     "apply": "Qo'llash",
     "total": "Jami",
     "pay": "{amount} so'm to'lash",
-    "secure": "Xavfsiz to'lov · istalgan vaqt bekor qilish"
+    "secure": "Xavfsiz to'lov · istalgan vaqt bekor qilish",
+    "choosePeriod": "Obuna muddati",
+    "choosePeriodHint": "Imtihon sanangizga mos muddatni tanlang",
+    "included": "Pro'ga nimalar kiradi",
+    "recommended": "Tavsiya etiladi",
+    "oneTime": "Bir martalik to'lov",
+    "subtotal": "Oraliq summa",
+    "dueToday": "Bugun to'lanadi",
+    "save": "{amount} so'm tejaysiz",
+    "validUntil": "Amal qiladi",
+    "validity": {
+      "monthly": "29-oktabr 2026 gacha",
+      "quarterly": "29-dekabr 2026 gacha",
+      "yearly": "29-sentabr 2027 gacha"
+    },
+    "redirect": "To'lov tanlangan tizim sahifasida xavfsiz yakunlanadi.",
+    "product": "{plan} obuna",
+    "trust": {
+      "secure": "Xavfsiz to'lov",
+      "cancel": "Istalgan vaqt bekor qilish",
+      "receipt": "Chek SMS orqali"
+    }
   },
   "billingSuccess": {
     "title": "Pro faollashtirildi",

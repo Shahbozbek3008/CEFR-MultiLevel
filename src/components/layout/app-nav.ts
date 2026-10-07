@@ -1,7 +1,7 @@
-import { ChartLine, CreditCard, House, Layers, LifeBuoy, UserRound, type LucideIcon } from 'lucide-react';
+import { ChartLine, CreditCard, House, Layers, UserRound, type LucideIcon } from 'lucide-react';
 import { ROUTES } from '@/lib/constants';
 
-export type NavKey = 'home' | 'tests' | 'progress' | 'profile' | 'billing' | 'help';
+export type NavKey = 'home' | 'tests' | 'progress' | 'profile' | 'billing';
 
 export type NavItem = { key: NavKey; href: string; icon: LucideIcon; badge?: number; match: (path: string) => boolean };
 
@@ -21,7 +21,6 @@ export const APP_NAV: readonly NavGroup[] = [
     items: [
       { key: 'profile', href: ROUTES.settings, icon: UserRound, match: (p) => p.startsWith(ROUTES.settings) },
       { key: 'billing', href: ROUTES.billing, icon: CreditCard, match: (p) => p.startsWith(ROUTES.billing) },
-      { key: 'help', href: `${ROUTES.home}#faq`, icon: LifeBuoy, match: () => false },
     ],
   },
 ];

@@ -16,7 +16,7 @@ export type PlanInfo = {
 export const PLANS: readonly PlanInfo[] = [
   { id: 'monthly', price: 49_000, features: BASE_FEATURES },
   { id: 'quarterly', price: 119_000, perMonth: 39_700, discount: 19, fullPrice: 147_000, features: [...BASE_FEATURES, 'personalPlan'] },
-  { id: 'yearly', price: 349_000, perMonth: 29_100, discount: 41, features: [...BASE_FEATURES, 'personalPlan', 'offline'] },
+  { id: 'yearly', price: 349_000, perMonth: 29_100, discount: 41, fullPrice: 588_000, features: [...BASE_FEATURES, 'personalPlan', 'offline'] },
 ];
 
 export const RECOMMENDED_PLAN: PlanId = 'quarterly';

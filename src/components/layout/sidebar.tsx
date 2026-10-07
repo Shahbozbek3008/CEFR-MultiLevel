@@ -2,7 +2,7 @@
 
 import { useId } from 'react';
 import { useTranslations } from 'next-intl';
-import { Search, Sparkles } from 'lucide-react';
+import { Sparkles } from 'lucide-react';
 import { Link, usePathname } from '@/i18n/navigation';
 import { ROUTES } from '@/lib/constants';
 import { MOCK_USER } from '@/lib/mock/user';
@@ -13,20 +13,6 @@ import { ButtonLink } from '@/components/ui/button';
 import { ActivePill } from '@/components/motion/active-pill';
 import { APP_NAV } from './app-nav';
 import { UserMenu } from './user-menu';
-
-function SearchTrigger() {
-  const t = useTranslations('app');
-  return (
-    <button
-      type="button"
-      className="flex h-9 w-full items-center gap-2 rounded-[10px] bg-surface px-2.5 text-[13px] text-ink-3 shadow-[0_0_0_1px_rgba(20,22,30,.07),0_1px_2px_rgba(20,22,30,.04)] transition-[box-shadow,color] duration-(--t-fast) hover:text-ink-2 hover:shadow-[0_0_0_1px_rgba(20,22,30,.12),0_1px_2px_rgba(20,22,30,.04)]"
-    >
-      <Icon as={Search} size={14} strokeWidth={1.7} />
-      <span className="flex-1 text-left">{t('search')}</span>
-      <kbd className="flex h-5 items-center rounded-[5px] bg-surface-sunken px-1.5 font-mono text-[10px] text-ink-3">⌘K</kbd>
-    </button>
-  );
-}
 
 function UpgradeCard() {
   const t = useTranslations('app.upsell');
@@ -56,7 +42,6 @@ export function Sidebar() {
   return (
     <aside className="sticky top-0 flex h-dvh w-(--sidebar-w) shrink-0 flex-col gap-5 px-3 pt-4 pb-3">
       <Link href={ROUTES.dashboard} className="flex h-9 items-center px-2 transition-opacity hover:opacity-80"><Logo /></Link>
-      <SearchTrigger />
       <nav className="flex flex-col gap-5" aria-label={t('nav.label')}>
         {APP_NAV.map((group) => (
           <div key={group.key} className="flex flex-col gap-px">

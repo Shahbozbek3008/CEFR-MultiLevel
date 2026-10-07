@@ -1,35 +1,44 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
-import { PLANS, RECOMMENDED_PLAN } from '@/lib/mock/plans';
+import { PLANS, RECOMMENDED_PLAN, type PlanId } from '@/lib/mock/plans';
 import { formatSum } from '@/lib/format';
-import { RadioCardGroup, RadioDot } from '@/components/ui/controls';
 import { Tag } from '@/components/ui/tag';
+import { RadioCardGroup, RadioDot } from '@/components/ui/controls';
 
-export function PlanPicker() {
+type PlanPickerProps = { value: PlanId; onChange: (value: PlanId) => void };
+
+export function PlanPicker({ value, onChange }: PlanPickerProps) {
   const t = useTranslations('plans');
   const tb = useTranslations('billing');
   return (
     <RadioCardGroup
       items={PLANS.map((p) => ({ ...p, value: p.id }))}
-      defaultValue={RECOMMENDED_PLAN}
-      label={tb('title')}
-      className="stagger flex flex-col gap-2.5"
-      itemClassName="flex items-center gap-4 rounded-[20px] bg-surface px-5 py-[18px] shadow-inset data-[state=checked]:bg-green-50 data-[state=checked]:shadow-selected"
+      value={value}
+      onValueChange={(next) => onChange(next as PlanId)}
+      label={tb('choosePeriod')}
+      className="flex flex-col overflow-hidden rounded-[14px] shadow-[0_0_0_1px_var(--border)]"
+      itemClassName="relative flex items-center gap-3.5 bg-surface px-4 py-3.5 shadow-[0_-1px_0_var(--border)] first:shadow-none hover:translate-y-0 hover:bg-surface-muted data-[state=checked]:z-10 data-[state=checked]:bg-green-50/70 data-[state=checked]:shadow-[inset_0_0_0_1.5px_var(--green-500)] first:rounded-t-[14px] last:rounded-b-[14px]"
       renderItem={(plan) => (
         <>
-          <RadioDot />
-          <span className="flex flex-1 flex-col gap-0.5">
-            <span className="flex items-center gap-2 text-base font-medium">
+          <RadioDot size={18} />
+          <span className="flex min-w-0 flex-1 flex-col gap-0.5">
+            <span className="flex flex-wrap items-center gap-1.5 text-sm font-medium">
               {t(`${plan.id}.name`)}
-              {plan.discount && <Tag size="sm">−{plan.discount}%</Tag>}
+              {plan.id === RECOMMENDED_PLAN && <Tag tone="blue" size="sm" className="h-5 px-1.5 text-[10.5px]">{tb('recommended')}</Tag>}
             </span>
-            <span className="text-[13px] text-ink-2">
-              {plan.perMonth ? t('perMonth', { price: formatSum(plan.perMonth) }) : t('perMonthUnit')}
-              {plan.id === RECOMMENDED_PLAN && ` · ${tb('untilExam')}`}
+            <span className="text-xs text-ink-3">
+              {plan.perMonth ? t('perMonth', { price: formatSum(plan.perMonth) }) : t('everyMonth')}
             </span>
           </span>
-          <span className="font-mono text-base font-medium">{formatSum(plan.price)}</span>
+          <span className="flex flex-col items-end gap-0.5">
+            <span className="font-mono text-sm font-medium">{formatSum(plan.price)}</span>
+            {plan.discount ? (
+              <span className="rounded-[5px] bg-green-100 px-1.5 text-[10.5px] font-medium text-green-text">−{plan.discount}%</span>
+            ) : (
+              <span className="text-[10.5px] text-ink-3">{t('currency')}</span>
+            )}
+          </span>
         </>
       )}
     />
