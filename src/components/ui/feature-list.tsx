@@ -4,7 +4,6 @@ import { Icon } from './icon';
 
 type FeatureListProps = { items: readonly string[]; variant?: 'plain' | 'badge'; className?: string };
 
-/** Checkmark list — plain green check (pricing) or check inside a green-100 circle (billing). */
 export function FeatureList({ items, variant = 'plain', className }: FeatureListProps) {
   return (
     <ul className={cn('m-0 flex list-none flex-col gap-3 p-0', className)}>

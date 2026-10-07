@@ -5,7 +5,6 @@ import { SKILLS, type Skill } from '@/lib/constants';
 import { cn } from '@/lib/cn';
 import { Icon } from '@/components/ui/icon';
 
-/** README test header stepper: done ✓, current dot, upcoming grey. */
 export function SectionStepper({ current }: { current: Skill }) {
   const t = useTranslations('skills');
   const currentIndex = SKILLS.indexOf(current);
@@ -27,9 +26,9 @@ export function SectionStepper({ current }: { current: Skill }) {
               )}
             >
               {state === 'done' ? (
-                <span className="grid size-4 place-items-center rounded-full bg-green-100 text-green-text"><Icon as={Check} size={10} strokeWidth={3} /></span>
+                <span className="grid size-4 animate-pop place-items-center rounded-full bg-green-100 text-green-text"><Icon as={Check} size={10} strokeWidth={3} /></span>
               ) : (
-                <span className={cn('size-1.5 rounded-full', state === 'current' ? 'bg-blue' : 'bg-line-strong')} />
+                <span className={cn('size-1.5 rounded-full', state === 'current' ? 'animate-pulse bg-blue' : 'bg-line-strong')} />
               )}
               {t(skill)}
             </li>

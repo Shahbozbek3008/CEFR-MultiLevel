@@ -15,7 +15,6 @@ export type CatalogTest = {
   name: string;
   status: CatalogStatus;
   duration: string;
-  /** Translation key under `catalog.meta` + optional values. */
   meta: { key: 'sections' | 'sectionsMonth' | 'progress' | 'date'; values?: Record<string, string | number> };
   progress?: number;
   score?: number;
@@ -33,17 +32,14 @@ export const CATALOG: readonly CatalogTest[] = [
 
 export const CATALOG_FILTERS = ['all', 'new', 'notStarted', 'done', 'free'] as const;
 
-/** W5 — recommended tests. */
 export const RECOMMENDED = [
   { id: 'mock13', kind: 'full', name: 'Mock Test #13', duration: '2:45', tag: 'new', tone: 'green', result: '—' },
   { id: 'writing2', kind: 'drill', name: 'Writing Task 2 · Opinion', duration: '40', tag: 'weak', tone: 'warning', result: '—' },
   { id: 'mock11', kind: 'done', name: 'Mock Test #11', duration: '2:45', tag: 'done', tone: 'neutral', result: '45/75' },
 ] as const;
 
-/** W5 — "continue" card. */
 export const IN_PROGRESS = { id: '12', name: 'Mock Test #12', section: 'Reading', part: 3, answered: 22, total: 35, left: '38:20', progress: 62 } as const;
 
-/** W6 — section overview of a full mock. */
 export const TEST_OVERVIEW = {
   id: '13',
   name: 'Mock Test #13',

@@ -12,7 +12,7 @@ export function SpeakingSteps() {
   return (
     <div className="grid gap-1" style={{ gridTemplateColumns: `repeat(${SPEAKING_TASK.steps}, 1fr)` }} aria-hidden>
       {Array.from({ length: SPEAKING_TASK.steps }, (_, i) => (
-        <span key={i} className={cn('h-1 rounded-[2px]', i < SPEAKING_TASK.done ? 'bg-green' : i === SPEAKING_TASK.done ? 'bg-green-300' : 'bg-line')} />
+        <span key={i} className={cn('h-1 origin-left animate-fade-in rounded-[2px]', i < SPEAKING_TASK.done ? 'bg-green' : i === SPEAKING_TASK.done ? 'animate-pulse bg-green-300' : 'bg-line')} style={{ animationDelay: `${i * 60}ms` }} />
       ))}
     </div>
   );
@@ -38,21 +38,23 @@ export function SpeakingPrompt() {
   );
 }
 
-/** README Recorder: red dot + halo, waveform, 64px stop button. */
 export function Recorder() {
   const t = useTranslations('test.speaking');
   return (
     <Card elevation="e1" className="flex items-center gap-6 px-6 py-[18px]">
       <span className="flex w-[130px] items-center gap-2 text-sm font-medium text-error-text" aria-live="polite">
-        <span className="size-[9px] rounded-full bg-error shadow-[0_0_0_5px_oklch(0.6_0.17_28/.15)] motion-safe:animate-pulse" />
+        <span className="relative grid size-[9px] place-items-center">
+          <span className="absolute size-[9px] animate-ping-soft rounded-full bg-error" />
+          <span className="size-[9px] rounded-full bg-error shadow-[0_0_0_5px_oklch(0.6_0.17_28/.15)]" />
+        </span>
         {t('recording')}
       </span>
-      <Waveform bars={48} played={30} gap={3} className="h-14" />
+      <Waveform bars={48} played={30} gap={3} live className="h-14" />
       <span className="font-mono text-sm text-ink-2">{SPEAKING_TASK.elapsed} / {SPEAKING_TASK.limit}</span>
       <div className="flex items-center gap-2.5">
         <IconButton icon={RotateCcw} label={t('restart')} size="lg" />
-        <button type="button" aria-label={t('stop')} className="grid size-16 place-items-center rounded-full bg-surface shadow-[inset_0_0_0_1px_var(--border),0_14px_28px_-12px_oklch(0.6_0.17_28/.5)] active:scale-[.97]">
-          <span className="size-[22px] rounded-[7px] bg-error" />
+        <button type="button" aria-label={t('stop')} className="group grid size-16 place-items-center rounded-full bg-surface shadow-[inset_0_0_0_1px_var(--border),0_14px_28px_-12px_oklch(0.6_0.17_28/.5)] transition-[scale,box-shadow] duration-(--t-sheet) ease-spring hover:scale-105 active:scale-95">
+          <span className="size-[22px] rounded-[7px] bg-error transition-[border-radius,scale] duration-(--t-sheet) ease-spring group-hover:scale-90 group-hover:rounded-[11px]" />
         </button>
         <IconButton icon={ChevronsRight} label={t('next')} size="lg" />
       </div>

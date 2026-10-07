@@ -6,7 +6,6 @@ import { formatSum } from '@/lib/format';
 import { RadioCardGroup, RadioDot } from '@/components/ui/controls';
 import { Tag } from '@/components/ui/tag';
 
-/** W19 — subscription period radio cards. */
 export function PlanPicker() {
   const t = useTranslations('plans');
   const tb = useTranslations('billing');
@@ -15,8 +14,8 @@ export function PlanPicker() {
       items={PLANS.map((p) => ({ ...p, value: p.id }))}
       defaultValue={RECOMMENDED_PLAN}
       label={tb('title')}
-      className="flex flex-col gap-2.5"
-      itemClassName="flex items-center gap-4 rounded-[20px] bg-surface px-5 py-[18px] shadow-inset transition-shadow duration-(--t-base) data-[state=checked]:bg-green-50 data-[state=checked]:shadow-selected"
+      className="stagger flex flex-col gap-2.5"
+      itemClassName="flex items-center gap-4 rounded-[20px] bg-surface px-5 py-[18px] shadow-inset data-[state=checked]:bg-green-50 data-[state=checked]:shadow-selected"
       renderItem={(plan) => (
         <>
           <RadioDot />

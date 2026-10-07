@@ -12,7 +12,6 @@ import { PlanSummary } from '@/components/auth/plan-summary';
 
 export const generateMetadata = metadataTitle('onboarding.account.title');
 
-/** W4a — onboarding 3/3: create account. */
 function AccountView() {
   const t = useTranslations('onboarding.account');
   const ta = useTranslations('auth');

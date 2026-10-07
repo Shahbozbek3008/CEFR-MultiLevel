@@ -3,7 +3,6 @@ export type AnswerStatus = 'correct' | 'wrong' | 'skipped';
 const WRONG = new Set([3, 8, 13, 21, 29]);
 const SKIPPED = new Set([6]);
 
-/** W13 — Listening answers of Mock Test #11 (35 questions). */
 export const LISTENING_REVIEW: readonly { n: number; status: AnswerStatus }[] = Array.from({ length: 35 }, (_, i) => {
   const n = i + 1;
   return { n, status: WRONG.has(n) ? 'wrong' : SKIPPED.has(n) ? 'skipped' : 'correct' };

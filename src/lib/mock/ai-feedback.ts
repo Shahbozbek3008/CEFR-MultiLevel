@@ -1,9 +1,7 @@
 import type { MarkKind } from '@/components/ui/mark';
 
-/** A run of text, optionally annotated. */
 export type Segment = string | { text: string; mark: MarkKind };
 
-/** W14 — submitted essay (Task 2) with AI annotations. */
 export const ESSAY = {
   words: 262,
   score: 52,
@@ -26,7 +24,6 @@ export const ESSAY = {
   ],
 } as const;
 
-/** W15 — Speaking Part 1.2 transcript. */
 export const SPEAKING = {
   part: '1.2',
   score: 46,

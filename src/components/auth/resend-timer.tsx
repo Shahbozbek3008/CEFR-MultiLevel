@@ -5,7 +5,6 @@ import { useTranslations } from 'next-intl';
 
 const format = (s: number) => `${String(Math.floor(s / 60)).padStart(2, '0')}:${String(s % 60).padStart(2, '0')}`;
 
-/** "Kod kelmadimi? Qayta yuborish 00:42" — README: resend timer 60s. */
 export function ResendTimer({ seconds = 60 }: { seconds?: number }) {
   const t = useTranslations('auth.verify');
   const [left, setLeft] = useState(seconds);

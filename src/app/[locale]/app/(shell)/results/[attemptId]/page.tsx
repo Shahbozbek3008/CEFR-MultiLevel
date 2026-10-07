@@ -33,7 +33,7 @@ function ScoreCard() {
       <Gauge value={LATEST_RESULT.total} max={MAX_SCORE} size={220} stroke={12} labelOffset={22}>
         <ScoreValue value={LATEST_RESULT.total} max={MAX_SCORE} size={66} />
       </Gauge>
-      <Tag size="lg">{t('level')}</Tag>
+      <Tag size="lg" className="animate-pop [animation-delay:900ms]">{t('level')}</Tag>
       <div className="w-full pt-[14px]">
         <ScaleBar value={LATEST_RESULT.total} variant="light" labels={LEVEL_LABELS} />
       </div>
@@ -63,9 +63,9 @@ function AiRecommendation() {
         <AiLabel>{t('label')}</AiLabel>
         <span className="text-lg leading-[1.3] font-medium tracking-[-0.02em]">{t('title')}</span>
       </div>
-      <div className="grid grid-cols-3 gap-2.5">
+      <div className="stagger grid grid-cols-3 gap-2.5">
         {focus.map((f) => (
-          <div key={f.title} className="flex flex-col gap-0.5 rounded-[14px] bg-surface-muted px-[14px] py-3">
+          <div key={f.title} className="flex flex-col gap-0.5 rounded-[14px] bg-surface-muted px-[14px] py-3 transition-[background-color,box-shadow,translate] duration-(--t-base) ease-out-expo hover:-translate-y-0.5 hover:bg-surface hover:shadow-e1">
             <span className="text-sm font-medium">{f.title}</span>
             <span className="text-xs text-ink-2">{f.text}</span>
           </div>
@@ -76,7 +76,6 @@ function AiRecommendation() {
   );
 }
 
-/** W12 — result overview. */
 function ResultView() {
   const t = useTranslations('results');
   return (
@@ -94,7 +93,7 @@ function ResultView() {
       />
       <div className="grid gap-4 xl:grid-cols-[400px_1fr]">
         <ScoreCard />
-        <div className="grid grid-cols-2 gap-3">
+        <div className="stagger grid grid-cols-2 gap-3">
           {LATEST_RESULT.skills.map((s) => <SkillStatCard key={s.skill} {...s} variant="detailed" href={SKILL_HREF[s.skill]} />)}
         </div>
       </div>

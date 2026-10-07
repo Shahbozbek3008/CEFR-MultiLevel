@@ -9,7 +9,6 @@ import { CatalogFilters } from '@/components/app/catalog-filters';
 
 export const generateMetadata = metadataTitle('catalog.title');
 
-/** W16 — test catalog. */
 function CatalogView() {
   const t = useTranslations('catalog');
   return (
@@ -24,7 +23,7 @@ function CatalogView() {
         />
         <CatalogFilters />
       </div>
-      <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-3">
+      <div className="stagger grid gap-3 md:grid-cols-2 xl:grid-cols-3">
         {CATALOG.map((test) => <CatalogCard key={test.id} test={test} />)}
       </div>
     </AppMain>

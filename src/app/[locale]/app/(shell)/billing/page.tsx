@@ -48,7 +48,6 @@ function OrderSummary() {
   );
 }
 
-/** W19 — subscription checkout. */
 function BillingView() {
   const t = useTranslations('billing');
   const ts = useTranslations('settings.nav');

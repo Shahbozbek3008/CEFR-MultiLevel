@@ -18,7 +18,6 @@ export const generateMetadata = metadataTitle('test.metaTitle');
 
 type ViewProps = { id: string };
 
-/** W7 */
 function ListeningView({ id }: ViewProps) {
   const t = useTranslations('test');
   return (
@@ -42,7 +41,6 @@ function ListeningView({ id }: ViewProps) {
   );
 }
 
-/** W8 */
 function ReadingView({ id }: ViewProps) {
   const t = useTranslations('test');
   return (
@@ -70,7 +68,6 @@ function ReadingView({ id }: ViewProps) {
   );
 }
 
-/** W9 */
 function WritingView({ id }: ViewProps) {
   const t = useTranslations('test');
   return (
@@ -87,7 +84,6 @@ function WritingView({ id }: ViewProps) {
   );
 }
 
-/** W10 */
 function SpeakingView() {
   return (
     <div className="flex min-h-0 flex-1 flex-col gap-5 px-30 pt-8 pb-10 max-xl:px-6">

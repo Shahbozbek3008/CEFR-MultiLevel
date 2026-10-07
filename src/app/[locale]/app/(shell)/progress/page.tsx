@@ -11,6 +11,7 @@ import { LineChart } from '@/components/ui/line-chart';
 import { ProgressBar } from '@/components/ui/progress-bar';
 import { SegmentedControl } from '@/components/ui/segmented-control';
 import { AppMain, PageHeader } from '@/components/layout/page-header';
+import { CountUp } from '@/components/motion/count-up';
 
 export const generateMetadata = metadataTitle('progress.title');
 
@@ -27,7 +28,6 @@ function CardTitle({ title, aside }: { title: string; aside: ReactNode }) {
   );
 }
 
-/** W17 — progress over time. */
 function ProgressView() {
   const t = useTranslations('progress');
   const ts = useTranslations('skills');
@@ -43,7 +43,7 @@ function ProgressView() {
           <div className="flex flex-col gap-1">
             <span className="text-[13px] text-ink-2">{t('overall')}</span>
             <div className="flex items-baseline gap-2.5">
-              <span className="text-5xl leading-[.9] font-light tracking-[-0.055em]">{LATEST_RESULT.total}</span>
+              <span className="text-5xl leading-[.9] font-light tracking-[-0.055em]"><CountUp value={LATEST_RESULT.total} /></span>
               <Tag tone="success">{signed(PROGRESS_HISTORY.gain)}</Tag>
               <span className="text-[13px] text-ink-2">{t('toNext', { level: nextLevel.code, points: nextLevel.min - LATEST_RESULT.total })}</span>
             </div>
@@ -54,18 +54,18 @@ function ProgressView() {
         </div>
         <LineChart data={PROGRESS_HISTORY.scores} thresholds={THRESHOLDS} label={t('chartLabel')} />
       </Card>
-      <div className="grid gap-4 xl:grid-cols-[1fr_1.3fr]">
+      <div className="stagger grid gap-4 xl:grid-cols-[1fr_1.3fr]">
         <Card className="px-[22px] py-2 shadow-[0_0_0_1px_rgba(20,22,30,.05)]">
           <CardTitle title={t('sections')} aside={<span className="text-xs text-ink-2">{t('period')}</span>} />
-          {PROGRESS_SKILLS.map((s) => (
+          {PROGRESS_SKILLS.map((s, i) => (
             <div key={s.skill} className={cn(ROW, 'grid-cols-[1fr_140px_60px]')}>
               <span className="flex items-center gap-2">
                 {ts(s.skill)}
-                {s.weak && <span className="size-1.5 rounded-full bg-warning" />}
+                {s.weak && <span className="size-1.5 animate-pulse rounded-full bg-warning" />}
               </span>
-              <ProgressBar value={s.score} max={MAX_SCORE} tone={s.weak ? 'warning' : 'blue'} />
+              <ProgressBar value={s.score} max={MAX_SCORE} tone={s.weak ? 'warning' : 'blue'} delay={i * 0.1} />
               <span className="text-right font-mono text-[13px]">
-                {s.score}<span className="ml-1.5 text-[11px] text-success">{signed(s.delta)}</span>
+                <CountUp value={s.score} delay={i * 0.1} /><span className="ml-1.5 text-[11px] text-success">{signed(s.delta)}</span>
               </span>
             </div>
           ))}
@@ -73,7 +73,7 @@ function ProgressView() {
         <Card className="px-[22px] py-2 shadow-[0_0_0_1px_rgba(20,22,30,.05)]">
           <CardTitle title={t('history')} aside={<span className="text-[13px] font-medium text-green-text">{t('all')}</span>} />
           {PROGRESS_HISTORY.attempts.map((a) => (
-            <div key={a.name} className={cn(ROW, 'grid-cols-[90px_1fr_80px_70px_60px]')}>
+            <div key={a.name} className={cn(ROW, '-mx-2.5 grid-cols-[90px_1fr_80px_70px_60px] rounded-[12px] px-2.5 transition-colors duration-(--t-base) hover:bg-surface-muted')}>
               <span className="font-mono text-xs text-ink-3">{a.date}</span>
               <span>{a.name}</span>
               <span className="font-mono">{a.score}/{MAX_SCORE}</span>

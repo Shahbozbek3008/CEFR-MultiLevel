@@ -6,9 +6,9 @@ import { Card } from '@/components/ui/card';
 import { Icon } from '@/components/ui/icon';
 import { Tag } from '@/components/ui/tag';
 import { MonoLabel } from '@/components/ui/typography';
+import { Grow } from '@/components/motion/grow';
 import { GapInput } from './gap-input';
 
-/** README AudioBar — real mode: progress + lock only, no seeking. */
 export function AudioBar() {
   const t = useTranslations('test');
   const a = LISTENING.audio;
@@ -17,8 +17,8 @@ export function AudioBar() {
       <span className="grid size-11 place-items-center rounded-full bg-surface-sunken text-ink-2"><Icon as={Lock} size={17} strokeWidth={1.7} /></span>
       <div className="flex flex-1 flex-col gap-2">
         <div className="relative h-[5px] rounded-[3px] bg-track">
-          <div className="h-full rounded-[3px] bg-blue" style={{ width: `${a.progress}%` }} />
-          <span className="absolute top-1/2 size-[13px] -translate-1/2 rounded-full bg-white shadow-[0_0_0_2px_var(--blue-500)]" style={{ left: `${a.progress}%` }} />
+          <Grow width={`${a.progress}%`} className="relative h-full rounded-[3px] bg-blue" />
+          <span className="absolute top-1/2 size-[13px] -translate-1/2 animate-pop rounded-full bg-white shadow-[0_0_0_2px_var(--blue-500)] [animation-delay:1s]" style={{ left: `${a.progress}%` }} />
         </div>
         <div className="flex justify-between font-mono text-xs text-ink-2"><span>{a.position}</span><span>{a.duration}</span></div>
       </div>
@@ -28,7 +28,6 @@ export function AudioBar() {
   );
 }
 
-/** Note-completion task (Part 2). */
 export function NoteCompletion() {
   const t = useTranslations('test');
   return (
@@ -54,7 +53,6 @@ export function NoteCompletion() {
   );
 }
 
-/** README QuestionNavigator: answered = green-100, current = gradient, flagged = warning dot, empty = inset border. */
 export function QuestionNavigator() {
   const t = useTranslations('test.navigator');
   const L = LISTENING;
@@ -65,7 +63,7 @@ export function QuestionNavigator() {
         <span className="font-mono text-xs text-ink-2">{L.answeredUpTo} / {L.totalQuestions}</span>
       </div>
       <div className="grid grid-cols-5 gap-1.5">
-        {Array.from({ length: L.totalQuestions }, (_, i) => i + 1).map((n) => {
+        {Array.from({ length: L.totalQuestions }, (_, i) => i + 1).map((n, i) => {
           const current = n === L.currentQuestion;
           const answered = n <= L.answeredUpTo;
           return (
@@ -73,9 +71,10 @@ export function QuestionNavigator() {
               key={n}
               type="button"
               aria-current={current || undefined}
+              style={{ animationDelay: `${i * 14}ms` }}
               className={cn(
-                'relative grid h-10 place-items-center rounded-sm font-mono text-xs',
-                current ? 'bg-action font-medium text-white' : answered ? 'bg-green-100 text-green-text' : 'bg-surface text-ink-2 shadow-inset',
+                'relative grid h-10 animate-pop place-items-center rounded-sm font-mono text-xs transition-[scale,background-color] duration-(--t-base) ease-spring hover:scale-105',
+                current ? 'bg-action font-medium text-white shadow-[0_0_0_3px_var(--green-100)]' : answered ? 'bg-green-100 text-green-text' : 'bg-surface text-ink-2 shadow-inset',
               )}
             >
               {n}
@@ -109,7 +108,12 @@ export function PartList() {
         >
           <span>Part {p.n} · {p.range}</span>
           {p.state === 'done' && <Icon as={Check} size={14} strokeWidth={2.2} className="text-success" />}
-          {p.state === 'current' && <span className="size-1.5 rounded-full bg-blue" />}
+          {p.state === 'current' && (
+            <span className="relative grid size-1.5 place-items-center">
+              <span className="absolute size-1.5 animate-ping-soft rounded-full bg-blue" />
+              <span className="size-1.5 rounded-full bg-blue" />
+            </span>
+          )}
           {p.state === 'locked' && <Icon as={Lock} size={13} className="text-ink-4" />}
         </div>
       ))}

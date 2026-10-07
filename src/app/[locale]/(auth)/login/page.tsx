@@ -11,7 +11,6 @@ import { LoginShowcase } from '@/components/auth/login-showcase';
 
 export const generateMetadata = metadataTitle('auth.login.title');
 
-/** W1 — phone login, split layout (560px form | showcase). */
 function LoginView() {
   const t = useTranslations('auth');
   return (

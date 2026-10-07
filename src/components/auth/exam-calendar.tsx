@@ -1,17 +1,18 @@
 'use client';
 
-import { useState } from 'react';
+import { useId, useState } from 'react';
 import { useTranslations } from 'next-intl';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { cn } from '@/lib/cn';
 import { IconButton } from '@/components/ui/icon-button';
+import { ActivePill } from '@/components/motion/active-pill';
 
-type ExamCalendarProps = { year: number; /** 0-based */ month: number; officialDays: readonly number[]; defaultSelected: number };
+type ExamCalendarProps = { year: number; month: number; officialDays: readonly number[]; defaultSelected: number };
 
-/** W4 — month grid (Monday first) with official exam days and the chosen date. */
 export function ExamCalendar({ year, month, officialDays, defaultSelected }: ExamCalendarProps) {
   const t = useTranslations('calendar');
   const [selected, setSelected] = useState(defaultSelected);
+  const layoutId = useId();
 
   const offset = (new Date(Date.UTC(year, month, 1)).getUTCDay() + 6) % 7;
   const days = new Date(Date.UTC(year, month + 1, 0)).getUTCDate();
@@ -43,10 +44,11 @@ export function ExamCalendar({ year, month, officialDays, defaultSelected }: Exa
               aria-pressed={isSelected}
               onClick={() => setSelected(n)}
               className={cn(
-                'grid h-12 place-items-center rounded-[14px] text-sm transition-colors duration-(--t-fast)',
-                isSelected ? 'bg-action font-medium text-white' : official ? 'bg-blue-50 font-medium text-blue-text' : 'text-ink-body hover:bg-surface-sunken',
+                'relative isolate grid h-12 place-items-center rounded-[14px] text-sm transition-[background-color,color,scale] duration-(--t-base) ease-out-expo active:scale-95',
+                isSelected ? 'font-medium text-white' : official ? 'bg-blue-50 font-medium text-blue-text' : 'text-ink-body hover:bg-surface-sunken',
               )}
             >
+              {isSelected && <ActivePill layoutId={layoutId} className="rounded-[14px] bg-action shadow-action-sm" />}
               {n}
             </button>
           );

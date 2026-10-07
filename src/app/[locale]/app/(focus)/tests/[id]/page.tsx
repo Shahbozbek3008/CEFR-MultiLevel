@@ -67,7 +67,6 @@ function DeviceCheck() {
   );
 }
 
-/** W6 — before the test: sections overview + device check. */
 function PretestView({ id }: { id: string }) {
   const t = useTranslations('pretest');
   return (

@@ -2,7 +2,6 @@
 
 import { useState } from 'react';
 
-/** README AnswerOption: gap-fill input, 150px, numbered. */
 export function GapInput({ n, defaultValue = '', autoFocus, placeholder }: { n: number; defaultValue?: string; autoFocus?: boolean; placeholder: string }) {
   const [value, setValue] = useState(defaultValue);
   return (
@@ -14,7 +13,7 @@ export function GapInput({ n, defaultValue = '', autoFocus, placeholder }: { n: 
         autoFocus={autoFocus}
         placeholder={placeholder}
         aria-label={`Question ${n}`}
-        className="h-[38px] w-[150px] rounded-[11px] bg-surface px-3 text-[15px] caret-green shadow-inset outline-none transition-shadow duration-(--t-fast) placeholder:text-ink-disabled focus:shadow-focus"
+        className="h-[38px] w-[150px] rounded-[11px] bg-surface px-3 text-[15px] caret-green shadow-inset outline-none transition-[box-shadow,width] duration-(--t-sheet) ease-out-expo placeholder:text-ink-disabled focus:w-[170px] focus:shadow-focus"
       />
     </span>
   );

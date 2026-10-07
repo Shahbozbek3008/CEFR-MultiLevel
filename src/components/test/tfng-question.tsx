@@ -5,7 +5,6 @@ import { cn } from '@/lib/cn';
 
 type TfngQuestionProps = { n: number; text: string; options: readonly string[]; defaultValue?: string; current?: boolean };
 
-/** README AnswerOption: T/F/NG segment; current row = green-50 + 1.5px green ring. */
 export function TfngQuestion({ n, text, options, defaultValue, current }: TfngQuestionProps) {
   return (
     <div
@@ -22,7 +21,7 @@ export function TfngQuestion({ n, text, options, defaultValue, current }: TfngQu
             <RadioGroup.Item
               key={o}
               value={o}
-              className="h-[38px] rounded-[11px] bg-surface text-[13px] text-ink-body shadow-inset transition-colors duration-(--t-fast) hover:bg-bg-app data-[state=checked]:bg-action data-[state=checked]:font-medium data-[state=checked]:text-white data-[state=checked]:shadow-none"
+              className="h-[38px] rounded-[11px] bg-surface text-[13px] text-ink-body shadow-inset transition-[background-color,color,box-shadow,scale] duration-(--t-base) ease-out-expo hover:bg-bg-app active:scale-95 data-[state=checked]:bg-action data-[state=checked]:font-medium data-[state=checked]:text-white data-[state=checked]:shadow-none"
             >
               {o}
             </RadioGroup.Item>

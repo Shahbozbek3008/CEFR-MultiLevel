@@ -12,7 +12,6 @@ import { Stage } from '@/components/layout/stage';
 
 export const generateMetadata = metadataTitle('onboarding.done.title');
 
-/** W4b — phone confirmed, plan ready. */
 function DoneView() {
   const t = useTranslations('onboarding.done');
   const ta = useTranslations('auth.verify');

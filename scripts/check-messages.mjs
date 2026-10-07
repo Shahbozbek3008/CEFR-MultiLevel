@@ -1,4 +1,3 @@
-// Verifies that every locale has exactly the same message keys as the source locale (uz).
 import { readFileSync } from 'node:fs';
 
 const SOURCE = 'uz';

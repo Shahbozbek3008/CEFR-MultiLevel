@@ -5,7 +5,6 @@ const PROVIDERS = [
   { key: 'apple', mark: <span className="size-[18px] rounded-[5px] bg-ink" /> },
 ] as const;
 
-/** Google / Apple sign-in (Auth.js providers in production). */
 export function SocialButtons() {
   const t = useTranslations('auth');
   return (

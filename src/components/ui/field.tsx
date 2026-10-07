@@ -36,7 +36,6 @@ export function TextInput({ size, readOnly, suffix, className, ...rest }: TextIn
   );
 }
 
-/** +998 prefix, mono digits (README: PhoneInput). */
 export function PhoneInput({ size, className, ...rest }: Omit<ComponentProps<'input'>, 'size'> & VariantProps<typeof inputShell>) {
   return (
     <div className={cn(inputShell({ size }), className)}>

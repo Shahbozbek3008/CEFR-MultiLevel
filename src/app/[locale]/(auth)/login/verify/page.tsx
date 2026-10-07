@@ -15,7 +15,6 @@ import { ResendTimer } from '@/components/auth/resend-timer';
 
 export const generateMetadata = metadataTitle('auth.verify.title');
 
-/** W2 — 6-digit SMS code. */
 function VerifyView() {
   const t = useTranslations('auth');
   return (

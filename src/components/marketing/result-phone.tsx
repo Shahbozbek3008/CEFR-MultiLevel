@@ -5,6 +5,8 @@ import { cn } from '@/lib/cn';
 import { Gauge, ScoreValue } from '@/components/ui/gauge';
 import { Tag } from '@/components/ui/tag';
 import { ProgressBar } from '@/components/ui/progress-bar';
+import { AiTip } from '@/components/ui/ai-tip';
+import { CountUp } from '@/components/motion/count-up';
 
 const VARIANTS = {
   full: {
@@ -23,16 +25,17 @@ const VARIANTS = {
   },
 } as const;
 
-/** Phone showing a result screen — hero visual (full on desktop, cropped on phones). */
 export function ResultPhone({ variant, className }: { variant: keyof typeof VARIANTS; className?: string }) {
   const t = useTranslations('landing.hero.phone');
   const tSkills = useTranslations('skills');
+  const tAi = useTranslations('landing.ai.card');
   const v = VARIANTS[variant];
   const full = variant === 'full';
 
   return (
     <div className={cn('relative flex flex-col overflow-hidden bg-[#f6f6f7]', v.frame, className)}>
-      <span className={cn('absolute left-1/2 -translate-x-1/2 bg-[#0c0c0e]', v.notch)} aria-hidden />
+      <span className={cn('absolute left-1/2 z-10 -translate-x-1/2 bg-[#0c0c0e]', v.notch)} aria-hidden />
+      <span className="pointer-events-none absolute inset-0 z-10 bg-[linear-gradient(120deg,rgba(255,255,255,.55),transparent_32%)]" aria-hidden />
       {full && (
         <div className="flex items-center justify-between px-0.5">
           <span className="text-[13px] font-medium">{t('title')}</span>
@@ -46,14 +49,15 @@ export function ResultPhone({ variant, className }: { variant: keyof typeof VARI
         <Tag size={full ? 'lg' : 'sm'} className={full ? 'h-[26px] rounded-[9px] px-2.5' : ''}>{t(full ? 'level' : 'levelShort')}</Tag>
       </div>
       <div className={cn('bg-surface shadow-[0_0_0_1px_rgba(20,22,30,.05)]', full ? 'rounded-[20px] px-[14px] py-1' : 'rounded-2xl px-3 py-0.5')}>
-        {LATEST_RESULT.skills.slice(0, v.rows).map((s) => (
+        {LATEST_RESULT.skills.slice(0, v.rows).map((s, i) => (
           <div key={s.skill} className={cn('grid items-center shadow-[0_1px_0_var(--divider)]', v.row)}>
             <span>{tSkills(s.skill)}</span>
-            <ProgressBar value={s.score} max={MAX_SCORE} size="xs" />
-            <span className={cn('text-right font-mono', full ? 'text-[11px]' : 'text-[10px]')}>{s.score}</span>
+            <ProgressBar value={s.score} max={MAX_SCORE} size="xs" delay={0.5 + i * 0.12} />
+            <span className={cn('text-right font-mono', full ? 'text-[11px]' : 'text-[10px]')}><CountUp value={s.score} delay={0.5 + i * 0.12} /></span>
           </div>
         ))}
       </div>
+      {full && <AiTip className="rounded-2xl text-xs">{tAi('summary')}</AiTip>}
     </div>
   );
 }

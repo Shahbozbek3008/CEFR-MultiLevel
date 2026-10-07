@@ -15,7 +15,6 @@ export const generateMetadata = metadataTitle('onboarding.date.title');
 const DAILY_OPTIONS = ['m15', 'm30', 'h1', 'h2'] as const;
 const target = LEVELS.find((l) => l.code === MOCK_EXAM.target)!;
 
-/** W4 — onboarding 2/3: exam date + daily time. */
 function DateView() {
   const t = useTranslations('onboarding');
   return (

@@ -3,7 +3,6 @@ import { PageTitle } from '@/components/ui/typography';
 
 type PageHeaderProps = { meta?: ReactNode; title: ReactNode; actions?: ReactNode };
 
-/** App page header: breadcrumb/meta + 30px title on the left, actions on the right. */
 export function PageHeader({ meta, title, actions }: PageHeaderProps) {
   return (
     <div className="flex items-end justify-between gap-5">
@@ -13,7 +12,6 @@ export function PageHeader({ meta, title, actions }: PageHeaderProps) {
   );
 }
 
-/** Main column of the app shell (README: padding 28×40, gap 20). */
 export function AppMain({ children, className = 'gap-5' }: { children: ReactNode; className?: string }) {
-  return <main className={`flex min-w-0 flex-1 flex-col px-10 py-7 ${className}`}>{children}</main>;
+  return <main className={`stagger flex min-w-0 flex-1 flex-col px-10 py-7 ${className}`}>{children}</main>;
 }

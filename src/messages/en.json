@@ -70,7 +70,13 @@
       "privacy": "Privacy",
       "telegram": "Telegram",
       "instagram": "Instagram",
-      "help": "Help"
+      "help": "Help",
+      "tagline": "Prepare for the CEFR Multilevel exam in real exam conditions.",
+      "product": "Product",
+      "resources": "Resources",
+      "legal": "Legal",
+      "rights": "All rights reserved.",
+      "status": "All systems operational"
     },
     "hero": {
       "announcement": "Updated to the official September format",
@@ -87,7 +93,24 @@
         "title": "Result",
         "level": "B2 · Upper-Intermediate",
         "levelShort": "B2 · Upper-Int."
-      }
+      },
+      "trust": "{count}+ students preparing",
+      "rating": "average rating"
+    },
+    "stats": {
+      "students": "Active students",
+      "tests": "Mock tests completed",
+      "speed": "AI scoring time",
+      "speedUnit": "min",
+      "growth": "Average gain in 3 months",
+      "growthUnit": "pts"
+    },
+    "preview": {
+      "eyebrow": "Your dashboard",
+      "title": "Everything in one place. <muted>Until exam day.</muted>",
+      "text": "Days left, scores for every section and your next step — at a glance.",
+      "url": "app.cefrmock.uz",
+      "live": "Live"
     },
     "format": {
       "eyebrow": "Exam format",
@@ -96,10 +119,26 @@
       "realMode": "Real mode",
       "note": "Note",
       "cards": {
-        "listening": { "meta": "35 min · 6 parts · 35 questions", "title": "Listening", "desc": "Audio plays once, no pauses. Just like the exam hall." },
-        "reading": { "meta": "60 min · 5 parts · 35 questions", "title": "Reading", "desc": "Highlight the text and leave notes." },
-        "writing": { "meta": "60 min · 2 tasks", "title": "Writing", "desc": "Autosave and a live word counter." },
-        "speaking": { "meta": "~15 min · 3 parts", "title": "Speaking", "desc": "Preparation timer, recording and transcript." }
+        "listening": {
+          "meta": "35 min · 6 parts · 35 questions",
+          "title": "Listening",
+          "desc": "Audio plays once, no pauses. Just like the exam hall."
+        },
+        "reading": {
+          "meta": "60 min · 5 parts · 35 questions",
+          "title": "Reading",
+          "desc": "Highlight the text and leave notes."
+        },
+        "writing": {
+          "meta": "60 min · 2 tasks",
+          "title": "Writing",
+          "desc": "Autosave and a live word counter."
+        },
+        "speaking": {
+          "meta": "~15 min · 3 parts",
+          "title": "Speaking",
+          "desc": "Preparation timer, recording and transcript."
+        }
       }
     },
     "ai": {
@@ -107,9 +146,18 @@
       "title": "Scored in two minutes. <muted>Every mistake explained.</muted>",
       "text": "Scores against the official criteria and clear, actionable advice.",
       "points": {
-        "criteria": { "title": "Scores on 4 criteria", "desc": "Task achievement, coherence, lexical resource, grammar." },
-        "inline": { "title": "Mistakes right in your text", "desc": "Grammar and vocabulary are marked separately, with fixes." },
-        "transcript": { "title": "Speaking transcript", "desc": "Tips on pauses, pace and pronunciation." }
+        "criteria": {
+          "title": "Scores on 4 criteria",
+          "desc": "Task achievement, coherence, lexical resource, grammar."
+        },
+        "inline": {
+          "title": "Mistakes right in your text",
+          "desc": "Grammar and vocabulary are marked separately, with fixes."
+        },
+        "transcript": {
+          "title": "Speaking transcript",
+          "desc": "Tips on pauses, pace and pronunciation."
+        }
       },
       "card": {
         "task": "Writing · Task 2",
@@ -123,25 +171,83 @@
       "eyebrow": "How it works",
       "title": "From goal to result. <muted>Three steps.</muted>",
       "items": {
-        "goal": { "title": "Set your goal", "desc": "A daily plan is built around your level and exam date." },
-        "test": { "title": "Take a mock test", "desc": "Real timing, real format. Answers are saved even offline." },
-        "review": { "title": "Work on your mistakes", "desc": "Close the gaps with question reviews and AI advice." }
+        "goal": {
+          "title": "Set your goal",
+          "desc": "A daily plan is built around your level and exam date."
+        },
+        "test": {
+          "title": "Take a mock test",
+          "desc": "Real timing, real format. Answers are saved even offline."
+        },
+        "review": {
+          "title": "Work on your mistakes",
+          "desc": "Close the gaps with question reviews and AI advice."
+        }
+      }
+    },
+    "testimonials": {
+      "eyebrow": "Results",
+      "title": "Students <muted>speak for themselves.</muted>",
+      "items": {
+        "t1": {
+          "name": "Dilnoza Rahimova",
+          "city": "Tashkent",
+          "quote": "Real mode feels exactly like the exam. Nothing surprised me on exam day — I got B2 on my first attempt."
+        },
+        "t2": {
+          "name": "Jasur Aliyev",
+          "city": "Samarkand",
+          "quote": "The AI feedback on Writing is precise. Now I understand why every mistake is a mistake."
+        },
+        "t3": {
+          "name": "Malika Yusupova",
+          "city": "Bukhara",
+          "quote": "30 minutes a day and drills from my plan. I went from 44 to 59 points in two months."
+        },
+        "t4": {
+          "name": "Sardor Toshmatov",
+          "city": "Namangan",
+          "quote": "The Speaking transcript showed me my pauses. I speak much more freely now."
+        },
+        "t5": {
+          "name": "Nilufar Karimova",
+          "city": "Fergana",
+          "quote": "Listening audio plays only once — that habit really paid off in the exam."
+        },
+        "t6": {
+          "name": "Bekzod Nazarov",
+          "city": "Andijan",
+          "quote": "The result review pinpointed my weak spot. I worked on grammar and reached C1."
+        }
       }
     },
     "pricing": {
       "eyebrow": "Pricing",
       "title": "How long until your exam?",
-      "text": "Click or Payme · cancel anytime"
+      "text": "Click or Payme · cancel anytime",
+      "popular": "Most popular"
     },
     "faq": {
       "eyebrow": "FAQ",
       "title": "Frequently asked questions",
       "help": "Didn't find an answer? <link>Message us on Telegram</link>",
       "items": {
-        "format": { "q": "How close are the tests to the official exam?", "a": "Format, timing and question types match the official CEFR Multilevel format of September 2026. Scores use the 0–75 scale and are converted to a level." },
-        "accuracy": { "q": "How accurate is the AI score?", "a": "The AI scores against the official criteria and every score comes with an explanation." },
-        "free": { "q": "What is free?", "a": "One full mock test, drills for every section and a result review. No card required." },
-        "offline": { "q": "Will I lose my answers if the internet drops?", "a": "No. Every answer is saved on your device instantly and sent once the connection is back." }
+        "format": {
+          "q": "How close are the tests to the official exam?",
+          "a": "Format, timing and question types match the official CEFR Multilevel format of September 2026. Scores use the 0–75 scale and are converted to a level."
+        },
+        "accuracy": {
+          "q": "How accurate is the AI score?",
+          "a": "The AI scores against the official criteria and every score comes with an explanation."
+        },
+        "free": {
+          "q": "What is free?",
+          "a": "One full mock test, drills for every section and a result review. No card required."
+        },
+        "offline": {
+          "q": "Will I lose my answers if the internet drops?",
+          "a": "No. Every answer is saved on your device instantly and sent once the connection is back."
+        }
       }
     },
     "cta": {
@@ -164,9 +270,18 @@
     "everyMonth": "every month",
     "choose": "Choose",
     "start": "Start",
-    "monthly": { "name": "Monthly", "period": "mo" },
-    "quarterly": { "name": "3 months", "period": "3 mo" },
-    "yearly": { "name": "Yearly", "period": "yr" },
+    "monthly": {
+      "name": "Monthly",
+      "period": "mo"
+    },
+    "quarterly": {
+      "name": "3 months",
+      "period": "3 mo"
+    },
+    "yearly": {
+      "name": "Yearly",
+      "period": "yr"
+    },
     "features": {
       "allMocks": "All mock tests",
       "aiWritingSpeaking": "AI Writing and Speaking",
@@ -213,14 +328,23 @@
     "goal": {
       "title": "Which level are you aiming for?",
       "text": "Your preparation plan is built around this level. You can change it later.",
-      "levels": { "B1": "Intermediate", "B2": "Upper-Intermediate", "C1": "Advanced" },
+      "levels": {
+        "B1": "Intermediate",
+        "B2": "Upper-Intermediate",
+        "C1": "Advanced"
+      },
       "range": "{min}–{max} points"
     },
     "date": {
       "title": "When is your exam?",
       "text": "We'll build a weekly plan and reminders around the date.",
       "daily": "Daily time",
-      "options": { "m15": "15 min", "m30": "30 min", "h1": "1 hour", "h2": "2 hours+" },
+      "options": {
+        "m15": "15 min",
+        "m30": "30 min",
+        "h1": "1 hour",
+        "h2": "2 hours+"
+      },
       "planLabel": "Your plan",
       "planValue": "{days} days · {tests} mock tests",
       "target": "{level} · {min}+"
@@ -247,7 +371,11 @@
     "done": {
       "title": "Number verified",
       "text": "<mono>{phone}</mono> · your account is ready. Your plan is set.",
-      "stats": { "days": "days", "tests": "mock tests", "minutes": "min / day" },
+      "stats": {
+        "days": "days",
+        "tests": "mock tests",
+        "minutes": "min / day"
+      },
       "startFree": "Start the free mock test",
       "toDashboard": "Go to dashboard"
     }
@@ -274,10 +402,18 @@
     "recommended": {
       "title": "Recommended tests",
       "catalog": "Catalog",
-      "kinds": { "full": "Full · 4 sections", "drill": "Section drill · AI score", "done": "Full · Sep 22" },
+      "kinds": {
+        "full": "Full · 4 sections",
+        "drill": "Section drill · AI score",
+        "done": "Full · Sep 22"
+      },
       "minutes": "{value} min",
       "hours": "{value} h",
-      "tags": { "new": "New", "weak": "Weak section", "done": "Completed" }
+      "tags": {
+        "new": "New",
+        "weak": "Weak section",
+        "done": "Completed"
+      }
     }
   },
   "results": {
@@ -325,7 +461,10 @@
     "level": "B2 · intermediate",
     "verdict": "Strong content, low grammatical accuracy.",
     "corrections": "Corrections",
-    "kinds": { "grammar": "Grammar", "lexical": "Vocabulary" },
+    "kinds": {
+      "grammar": "Grammar",
+      "lexical": "Vocabulary"
+    },
     "notes": {
       "peoplePlural": "\"people\" is plural — the verb takes no -s.",
       "strongerAdjective": "A stronger adjective — raises your Lexical score."
@@ -348,9 +487,24 @@
     "title": "Tests",
     "count": "{total} tests · {fresh} new",
     "search": "Search",
-    "tabs": { "full": "Full mocks", "drills": "Section drills" },
-    "filters": { "all": "All", "new": "New", "notStarted": "Not started", "done": "Completed", "free": "Free" },
-    "status": { "new": "New", "inProgress": "In progress", "done": "Completed", "free": "Free", "pro": "Pro" },
+    "tabs": {
+      "full": "Full mocks",
+      "drills": "Section drills"
+    },
+    "filters": {
+      "all": "All",
+      "new": "New",
+      "notStarted": "Not started",
+      "done": "Completed",
+      "free": "Free"
+    },
+    "status": {
+      "new": "New",
+      "inProgress": "In progress",
+      "done": "Completed",
+      "free": "Free",
+      "pro": "Pro"
+    },
     "meta": {
       "sections": "4 sections",
       "sectionsMonth": "4 sections · September 2026",
@@ -364,7 +518,11 @@
   "progress": {
     "title": "Progress",
     "meta": "{count} tests · July — September",
-    "range": { "1m": "1 month", "3m": "3 months", "all": "All" },
+    "range": {
+      "1m": "1 month",
+      "3m": "3 months",
+      "all": "All"
+    },
     "overall": "Overall score",
     "toNext": "{points} points to {level}",
     "months": "July,August,September",
@@ -408,7 +566,11 @@
       "languageHint": "Uzbek, Russian or English",
       "theme": "Theme",
       "themeHint": "Interface appearance",
-      "themes": { "light": "Light", "dark": "Dark", "system": "System" }
+      "themes": {
+        "light": "Light",
+        "dark": "Dark",
+        "system": "System"
+      }
     }
   },
   "billing": {

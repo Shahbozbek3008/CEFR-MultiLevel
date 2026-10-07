@@ -13,12 +13,10 @@ const KIND = {
 
 export type MarkKind = keyof typeof KIND;
 
-/** Inline annotation in essays/transcripts/passages (README colours: error = grammar, warning = vocabulary). */
 export function Mark({ kind, children }: { kind: MarkKind; children: ReactNode }) {
   return <mark className={cn('text-inherit', KIND[kind])}>{children}</mark>;
 }
 
-/** "believes → believe" correction line. */
 export function Correction({ from, to, className }: { from: string; to: string; className?: string }) {
   return (
     <span className={cn('flex items-center gap-2 text-sm', className)}>
@@ -29,7 +27,6 @@ export function Correction({ from, to, className }: { from: string; to: string; 
   );
 }
 
-/** Small colour legend: "▬ Grammar · 6". */
 export function MarkLegend({ items }: { items: readonly { kind: 'grammar' | 'lexical'; label: string }[] }) {
   return (
     <span className="flex gap-[14px] text-xs text-ink-2">

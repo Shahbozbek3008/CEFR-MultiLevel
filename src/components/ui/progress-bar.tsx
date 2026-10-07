@@ -1,8 +1,9 @@
 import { cva, type VariantProps } from 'class-variance-authority';
 import { cn } from '@/lib/cn';
 import { pct } from '@/lib/format';
+import { Grow } from '@/components/motion/grow';
 
-const trackVariants = cva('relative bg-track', {
+const trackVariants = cva('relative overflow-hidden bg-track', {
   variants: {
     size: { xs: 'h-[3px] rounded-[2px]', sm: 'h-1 rounded-[2px]', md: 'h-[5px] rounded-[3px]', lg: 'h-1.5 rounded-[3px]' },
     surface: { default: '', muted: 'bg-divider-page' },
@@ -17,10 +18,11 @@ type ProgressBarProps = VariantProps<typeof trackVariants> & {
   value: number;
   max?: number;
   tone?: ProgressTone;
+  delay?: number;
   className?: string;
 };
 
-export function ProgressBar({ value, max = 100, tone = 'blue', size, surface, className }: ProgressBarProps) {
+export function ProgressBar({ value, max = 100, tone = 'blue', size, surface, delay, className }: ProgressBarProps) {
   return (
     <div
       role="progressbar"
@@ -29,7 +31,7 @@ export function ProgressBar({ value, max = 100, tone = 'blue', size, surface, cl
       aria-valuemax={max}
       className={cn(trackVariants({ size, surface }), className)}
     >
-      <div className={cn('h-full rounded-[inherit]', FILL[tone])} style={{ width: pct(value, max) }} />
+      <Grow width={pct(value, max)} delay={delay} className={cn('h-full rounded-[inherit]', FILL[tone])} />
     </div>
   );
 }

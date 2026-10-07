@@ -6,7 +6,6 @@ import { KeyValueList } from '@/components/ui/key-value-list';
 
 const target = LEVELS.find((l) => l.code === MOCK_EXAM.target)!;
 
-/** W4a — "Sizning rejangiz" summary card. */
 export function PlanSummary() {
   const t = useTranslations('onboarding.account.summary');
   const tc = useTranslations('common');

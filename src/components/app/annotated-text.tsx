@@ -3,7 +3,6 @@ import { Mark, type MarkKind } from '@/components/ui/mark';
 
 type Segment = string | { text: string; mark: MarkKind | 'filler' };
 
-/** Renders text runs with inline AI annotations; `filler` words are muted. */
 export function AnnotatedText({ segments }: { segments: readonly Segment[] }) {
   return (
     <>

@@ -2,7 +2,6 @@ import type { Skill } from '@/lib/constants';
 
 export type SkillScore = { skill: Skill; score: number; delta: number; weak?: boolean };
 
-/** Mock Test #11 — the result used across landing, results and progress. */
 export const LATEST_RESULT = {
   attemptId: '11',
   testName: 'Mock Test #11',
@@ -18,7 +17,6 @@ export const LATEST_RESULT = {
   ] satisfies SkillScore[],
 } as const;
 
-/** Dashboard snapshot (W5) — current skill estimates. */
 export const DASHBOARD_SKILLS: readonly SkillScore[] = [
   { skill: 'listening', score: 49, delta: 4 },
   { skill: 'reading', score: 46, delta: 6 },
@@ -26,7 +24,6 @@ export const DASHBOARD_SKILLS: readonly SkillScore[] = [
   { skill: 'speaking', score: 47, delta: 3 },
 ];
 
-/** 3-month gains on the progress page (W17), ordered as in the design. */
 export const PROGRESS_SKILLS: readonly SkillScore[] = [
   { skill: 'listening', score: 61, delta: 9 },
   { skill: 'reading', score: 57, delta: 12 },

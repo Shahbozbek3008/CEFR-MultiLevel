@@ -3,12 +3,12 @@
 import { useRef, useState, type ClipboardEvent, type KeyboardEvent } from 'react';
 import { cva } from 'class-variance-authority';
 
-const cell = cva('w-full text-center font-mono outline-none transition-shadow duration-(--t-fast)', {
+const cell = cva('w-full text-center font-mono outline-none transition-[box-shadow,background-color,scale] duration-(--t-base) ease-out-expo focus:scale-[1.04]', {
   variants: {
     state: {
       empty: 'bg-surface shadow-inset focus:shadow-focus',
       filled: 'bg-surface shadow-[inset_0_0_0_1px_var(--border-strong)] focus:shadow-focus',
-      success: 'bg-success-50 text-success shadow-[inset_0_0_0_1.5px_var(--success-text)]',
+      success: 'animate-pop bg-success-50 text-success shadow-[inset_0_0_0_1.5px_var(--success-text)]',
     },
     size: { lg: 'h-[60px] rounded-[14px] text-2xl', md: 'h-14 rounded-[14px] text-[22px]' },
   },
@@ -61,6 +61,7 @@ export function OtpInput({ length = 6, defaultValue = '', success = false, size 
           onKeyDown={(e) => onKeyDown(i, e)}
           onPaste={onPaste}
           className={cell({ size, state: success ? 'success' : d ? 'filled' : 'empty' })}
+          style={success ? { animationDelay: `${i * 70}ms` } : undefined}
         />
       ))}
     </div>

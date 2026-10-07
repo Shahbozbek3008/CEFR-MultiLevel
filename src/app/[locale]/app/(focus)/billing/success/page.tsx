@@ -14,7 +14,6 @@ export const generateMetadata = metadataTitle('billingSuccess.title');
 
 const plan = PLANS.find((p) => p.id === RECOMMENDED_PLAN)!;
 
-/** W20 — payment confirmed. */
 function SuccessView() {
   const t = useTranslations('billingSuccess');
   const tp = useTranslations('plans');

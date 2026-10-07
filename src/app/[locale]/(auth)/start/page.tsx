@@ -9,7 +9,6 @@ import { LevelPicker } from '@/components/auth/level-picker';
 
 export const generateMetadata = metadataTitle('onboarding.goal.title');
 
-/** W3 — onboarding 1/3: target level. */
 function GoalView() {
   const t = useTranslations('onboarding');
   return (

@@ -2,7 +2,7 @@
 
 CEFR Multilevel imtihoniga tayyorlanish platformasining web versiyasi (hozircha faqat dizayn, ma'lumotlar mock).
 
-**Stack:** Next.js 16 (App Router, RSC) · React 19 · TypeScript · Tailwind v4 · next-intl (uz / ru / en) · Radix UI · lucide-react
+**Stack:** Next.js 16 (App Router, RSC) · React 19 · TypeScript · Tailwind v4 · next-intl (uz / ru / en) · Radix UI · motion · lucide-react
 
 ## Ishga tushirish
 
@@ -38,6 +38,7 @@ src/
     ui/          primitivlar: Button, Card, Tag, Chip, SegmentedControl, Field/PhoneInput, OtpInput,
                  Switch/Checkbox/RadioCardGroup, Dialog, Gauge/Ring, LineChart, Waveform, ProgressBar…
     layout/      Sidebar, PageHeader/AppMain, Stage, LocaleSwitcher
+    motion/      Reveal/Stagger, CountUp, Words, Spotlight, Marquee, Parallax, ScrollTilt, Grow, ActivePill (motion)
     marketing/   landing bo'limlari
     auth/        onboarding komponentlari
     app/         panel/natija/hisob komponentlari

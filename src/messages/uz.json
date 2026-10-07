@@ -70,7 +70,13 @@
       "privacy": "Maxfiylik",
       "telegram": "Telegram",
       "instagram": "Instagram",
-      "help": "Yordam"
+      "help": "Yordam",
+      "tagline": "CEFR Multilevel imtihoniga real sharoitda tayyorlanish platformasi.",
+      "product": "Mahsulot",
+      "resources": "Resurslar",
+      "legal": "Huquqiy",
+      "rights": "Barcha huquqlar himoyalangan.",
+      "status": "Barcha tizimlar ishlayapti"
     },
     "hero": {
       "announcement": "Sentabr rasmiy formatiga yangilandi",
@@ -87,7 +93,24 @@
         "title": "Natija",
         "level": "B2 · Upper-Intermediate",
         "levelShort": "B2 · Upper-Int."
-      }
+      },
+      "trust": "{count}+ o'quvchi tayyorlanmoqda",
+      "rating": "o'rtacha baho"
+    },
+    "stats": {
+      "students": "Faol o'quvchilar",
+      "tests": "Topshirilgan mock testlar",
+      "speed": "AI baholash vaqti",
+      "speedUnit": "daq",
+      "growth": "3 oyda o'rtacha o'sish",
+      "growthUnit": "ball"
+    },
+    "preview": {
+      "eyebrow": "Shaxsiy kabinet",
+      "title": "Hammasi bir joyda. <muted>Imtihon kunigacha.</muted>",
+      "text": "Qolgan kunlar, har bo'lim bo'yicha ball va keyingi qadam — bir qarashda.",
+      "url": "app.cefrmock.uz",
+      "live": "Jonli"
     },
     "format": {
       "eyebrow": "Imtihon formati",
@@ -96,10 +119,26 @@
       "realMode": "Real rejim",
       "note": "Izoh",
       "cards": {
-        "listening": { "meta": "35 daq · 6 qism · 35 savol", "title": "Listening", "desc": "Audio bir marta, pauzasiz. Xuddi imtihon zalidagidek." },
-        "reading": { "meta": "60 daq · 5 qism · 35 savol", "title": "Reading", "desc": "Matnni belgilang va izoh qoldiring." },
-        "writing": { "meta": "60 daq · 2 topshiriq", "title": "Writing", "desc": "Avtosaqlash va jonli so'z hisoblagich." },
-        "speaking": { "meta": "~15 daq · 3 qism", "title": "Speaking", "desc": "Tayyorlanish taymeri, yozib olish va transkript." }
+        "listening": {
+          "meta": "35 daq · 6 qism · 35 savol",
+          "title": "Listening",
+          "desc": "Audio bir marta, pauzasiz. Xuddi imtihon zalidagidek."
+        },
+        "reading": {
+          "meta": "60 daq · 5 qism · 35 savol",
+          "title": "Reading",
+          "desc": "Matnni belgilang va izoh qoldiring."
+        },
+        "writing": {
+          "meta": "60 daq · 2 topshiriq",
+          "title": "Writing",
+          "desc": "Avtosaqlash va jonli so'z hisoblagich."
+        },
+        "speaking": {
+          "meta": "~15 daq · 3 qism",
+          "title": "Speaking",
+          "desc": "Tayyorlanish taymeri, yozib olish va transkript."
+        }
       }
     },
     "ai": {
@@ -107,9 +146,18 @@
       "title": "Ikki daqiqada baho. <muted>Har bir xato izohi bilan.</muted>",
       "text": "Rasmiy mezonlar bo'yicha ball va o'zbek tilidagi aniq tavsiyalar.",
       "points": {
-        "criteria": { "title": "4 mezon bo'yicha ball", "desc": "Task achievement, coherence, lexical resource, grammar." },
-        "inline": { "title": "Xatolar matnning o'zida", "desc": "Grammatika va lug'at alohida belgilanadi, tuzatish bilan." },
-        "transcript": { "title": "Speaking transkripti", "desc": "Pauza, tezlik va talaffuz bo'yicha tavsiyalar." }
+        "criteria": {
+          "title": "4 mezon bo'yicha ball",
+          "desc": "Task achievement, coherence, lexical resource, grammar."
+        },
+        "inline": {
+          "title": "Xatolar matnning o'zida",
+          "desc": "Grammatika va lug'at alohida belgilanadi, tuzatish bilan."
+        },
+        "transcript": {
+          "title": "Speaking transkripti",
+          "desc": "Pauza, tezlik va talaffuz bo'yicha tavsiyalar."
+        }
       },
       "card": {
         "task": "Writing · Task 2",
@@ -123,25 +171,83 @@
       "eyebrow": "Qanday ishlaydi",
       "title": "Maqsaddan natijagacha. <muted>Uch qadam.</muted>",
       "items": {
-        "goal": { "title": "Maqsadni belgilang", "desc": "Daraja va imtihon sanasiga qarab kunlik reja tuziladi." },
-        "test": { "title": "Mock test ishlang", "desc": "Real vaqt, real format. Javoblar oflayn ham saqlanadi." },
-        "review": { "title": "Xatolar ustida ishlang", "desc": "Savollar tahlili va AI tavsiyalari bilan zaif joylarni yoping." }
+        "goal": {
+          "title": "Maqsadni belgilang",
+          "desc": "Daraja va imtihon sanasiga qarab kunlik reja tuziladi."
+        },
+        "test": {
+          "title": "Mock test ishlang",
+          "desc": "Real vaqt, real format. Javoblar oflayn ham saqlanadi."
+        },
+        "review": {
+          "title": "Xatolar ustida ishlang",
+          "desc": "Savollar tahlili va AI tavsiyalari bilan zaif joylarni yoping."
+        }
+      }
+    },
+    "testimonials": {
+      "eyebrow": "Natijalar",
+      "title": "O'quvchilar <muted>o'zlari gapiradi.</muted>",
+      "items": {
+        "t1": {
+          "name": "Dilnoza Rahimova",
+          "city": "Toshkent",
+          "quote": "Real rejim xuddi imtihondagidek. Imtihon kuni hech narsa yangilik bo'lmadi — B2 ni birinchi urinishda oldim."
+        },
+        "t2": {
+          "name": "Jasur Aliyev",
+          "city": "Samarqand",
+          "quote": "Writing bo'yicha AI izohlari juda aniq. Har bir xato nega xato ekanini endi tushunaman."
+        },
+        "t3": {
+          "name": "Malika Yusupova",
+          "city": "Buxoro",
+          "quote": "Har kuni 30 daqiqa va reja bo'yicha mashqlar. Ikki oyda 44 dan 59 ballga chiqdim."
+        },
+        "t4": {
+          "name": "Sardor Toshmatov",
+          "city": "Namangan",
+          "quote": "Speaking transkripti pauzalarimni ko'rsatdi. Endi ancha erkin gapiraman."
+        },
+        "t5": {
+          "name": "Nilufar Karimova",
+          "city": "Farg'ona",
+          "quote": "Listening'da audio faqat bir marta eshittiriladi — bu odat imtihonda juda asqotdi."
+        },
+        "t6": {
+          "name": "Bekzod Nazarov",
+          "city": "Andijon",
+          "quote": "Natijalar tahlili zaif joyimni aniq ko'rsatdi. Grammatika ustida ishlab C1 ga yetdim."
+        }
       }
     },
     "pricing": {
       "eyebrow": "Narxlar",
       "title": "Imtihongacha qancha vaqt qoldi?",
-      "text": "Click yoki Payme · istalgan vaqt bekor qilish"
+      "text": "Click yoki Payme · istalgan vaqt bekor qilish",
+      "popular": "Eng ko'p tanlanadi"
     },
     "faq": {
       "eyebrow": "Savollar",
       "title": "Ko'p beriladigan savollar",
       "help": "Javob topmadingizmi? <link>Telegram orqali yozing</link>",
       "items": {
-        "format": { "q": "Testlar rasmiy imtihonga qanchalik mos?", "a": "Formati, vaqti va savol turlari 2026-yil sentabrdagi rasmiy CEFR Multilevel formatiga mos. Ball 0–75 shkalada hisoblanadi va darajaga o'giriladi." },
-        "accuracy": { "q": "AI bahosi qanchalik aniq?", "a": "AI rasmiy mezonlar bo'yicha baholaydi va har bir ball izoh bilan beriladi." },
-        "free": { "q": "Bepul nima bor?", "a": "Bitta to'liq mock test, har bo'limdan mashqlar va natija tahlili. Karta talab qilinmaydi." },
-        "offline": { "q": "Internet uzilsa javoblarim yo'qoladimi?", "a": "Yo'q. Har bir javob darhol qurilmada saqlanadi va ulanish tiklanganda yuboriladi." }
+        "format": {
+          "q": "Testlar rasmiy imtihonga qanchalik mos?",
+          "a": "Formati, vaqti va savol turlari 2026-yil sentabrdagi rasmiy CEFR Multilevel formatiga mos. Ball 0–75 shkalada hisoblanadi va darajaga o'giriladi."
+        },
+        "accuracy": {
+          "q": "AI bahosi qanchalik aniq?",
+          "a": "AI rasmiy mezonlar bo'yicha baholaydi va har bir ball izoh bilan beriladi."
+        },
+        "free": {
+          "q": "Bepul nima bor?",
+          "a": "Bitta to'liq mock test, har bo'limdan mashqlar va natija tahlili. Karta talab qilinmaydi."
+        },
+        "offline": {
+          "q": "Internet uzilsa javoblarim yo'qoladimi?",
+          "a": "Yo'q. Har bir javob darhol qurilmada saqlanadi va ulanish tiklanganda yuboriladi."
+        }
       }
     },
     "cta": {
@@ -164,9 +270,18 @@
     "everyMonth": "har oy",
     "choose": "Tanlash",
     "start": "Boshlash",
-    "monthly": { "name": "Oylik", "period": "oy" },
-    "quarterly": { "name": "3 oylik", "period": "3 oy" },
-    "yearly": { "name": "Yillik", "period": "yil" },
+    "monthly": {
+      "name": "Oylik",
+      "period": "oy"
+    },
+    "quarterly": {
+      "name": "3 oylik",
+      "period": "3 oy"
+    },
+    "yearly": {
+      "name": "Yillik",
+      "period": "yil"
+    },
     "features": {
       "allMocks": "Barcha mock testlar",
       "aiWritingSpeaking": "AI Writing va Speaking",
@@ -213,14 +328,23 @@
     "goal": {
       "title": "Qaysi darajani maqsad qilyapsiz?",
       "text": "Tayyorgarlik rejasi shu darajaga qarab tuziladi. Keyin o'zgartirish mumkin.",
-      "levels": { "B1": "Intermediate", "B2": "Upper-Intermediate", "C1": "Advanced" },
+      "levels": {
+        "B1": "Intermediate",
+        "B2": "Upper-Intermediate",
+        "C1": "Advanced"
+      },
       "range": "{min}–{max} ball"
     },
     "date": {
       "title": "Imtihon qachon?",
       "text": "Sana bo'yicha haftalik reja va eslatmalar tuzamiz.",
       "daily": "Kunlik vaqt",
-      "options": { "m15": "15 daq", "m30": "30 daq", "h1": "1 soat", "h2": "2 soat+" },
+      "options": {
+        "m15": "15 daq",
+        "m30": "30 daq",
+        "h1": "1 soat",
+        "h2": "2 soat+"
+      },
       "planLabel": "Sizning rejangiz",
       "planValue": "{days} kun · {tests} ta mock test",
       "target": "{level} · {min}+"
@@ -247,7 +371,11 @@
     "done": {
       "title": "Raqam tasdiqlandi",
       "text": "<mono>{phone}</mono> · hisobingiz yaratildi. Rejangiz tayyor.",
-      "stats": { "days": "kun", "tests": "mock test", "minutes": "daq / kun" },
+      "stats": {
+        "days": "kun",
+        "tests": "mock test",
+        "minutes": "daq / kun"
+      },
       "startFree": "Bepul mock testni boshlash",
       "toDashboard": "Boshqaruv paneliga o'tish"
     }
@@ -274,10 +402,18 @@
     "recommended": {
       "title": "Tavsiya etilgan testlar",
       "catalog": "Katalog",
-      "kinds": { "full": "To'liq · 4 bo'lim", "drill": "Bo'lim mashqi · AI baho", "done": "To'liq · 22-sentabr" },
+      "kinds": {
+        "full": "To'liq · 4 bo'lim",
+        "drill": "Bo'lim mashqi · AI baho",
+        "done": "To'liq · 22-sentabr"
+      },
       "minutes": "{value} daq",
       "hours": "{value} soat",
-      "tags": { "new": "Yangi", "weak": "Zaif bo'lim", "done": "Tugagan" }
+      "tags": {
+        "new": "Yangi",
+        "weak": "Zaif bo'lim",
+        "done": "Tugagan"
+      }
     }
   },
   "results": {
@@ -325,7 +461,10 @@
     "level": "B2 · o'rta",
     "verdict": "Mazmun kuchli, grammatik aniqlik past.",
     "corrections": "Tuzatishlar",
-    "kinds": { "grammar": "Grammar", "lexical": "Lug'at" },
+    "kinds": {
+      "grammar": "Grammar",
+      "lexical": "Lug'at"
+    },
     "notes": {
       "peoplePlural": "\"people\" ko'plikda — fe'l -s olmaydi.",
       "strongerAdjective": "Kuchliroq sifat — Lexical ballni oshiradi."
@@ -348,9 +487,24 @@
     "title": "Testlar",
     "count": "{total} ta test · {fresh} tasi yangi",
     "search": "Qidirish",
-    "tabs": { "full": "To'liq mock", "drills": "Bo'lim mashqlari" },
-    "filters": { "all": "Hammasi", "new": "Yangi", "notStarted": "Boshlanmagan", "done": "Tugagan", "free": "Bepul" },
-    "status": { "new": "Yangi", "inProgress": "Davom etmoqda", "done": "Tugagan", "free": "Bepul", "pro": "Pro" },
+    "tabs": {
+      "full": "To'liq mock",
+      "drills": "Bo'lim mashqlari"
+    },
+    "filters": {
+      "all": "Hammasi",
+      "new": "Yangi",
+      "notStarted": "Boshlanmagan",
+      "done": "Tugagan",
+      "free": "Bepul"
+    },
+    "status": {
+      "new": "Yangi",
+      "inProgress": "Davom etmoqda",
+      "done": "Tugagan",
+      "free": "Bepul",
+      "pro": "Pro"
+    },
     "meta": {
       "sections": "4 bo'lim",
       "sectionsMonth": "4 bo'lim · sentabr 2026",
@@ -364,7 +518,11 @@
   "progress": {
     "title": "Progress",
     "meta": "{count} ta test · iyul — sentabr",
-    "range": { "1m": "1 oy", "3m": "3 oy", "all": "Hammasi" },
+    "range": {
+      "1m": "1 oy",
+      "3m": "3 oy",
+      "all": "Hammasi"
+    },
     "overall": "Umumiy ball",
     "toNext": "{level} gacha {points} ball",
     "months": "iyul,avgust,sentabr",
@@ -408,7 +566,11 @@
       "languageHint": "O'zbekcha, ruscha yoki inglizcha",
       "theme": "Tema",
       "themeHint": "Interfeys ko'rinishi",
-      "themes": { "light": "Yorug'", "dark": "Qorong'i", "system": "Tizim" }
+      "themes": {
+        "light": "Yorug'",
+        "dark": "Qorong'i",
+        "system": "Tizim"
+      }
     }
   },
   "billing": {

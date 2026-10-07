@@ -16,6 +16,7 @@ import { PageTitle } from '@/components/ui/typography';
 import { SearchField } from '@/components/app/search-field';
 import { ScaleBar } from '@/components/app/scale-bar';
 import { SkillStatCard } from '@/components/app/skill-stat-card';
+import { CountUp } from '@/components/motion/count-up';
 
 export const generateMetadata = metadataTitle('dashboard.metaTitle');
 
@@ -29,16 +30,18 @@ function ExamCountdown() {
   const t = useTranslations('dashboard.countdown');
   const [, b2, c1] = LEVELS;
   return (
-    <div className="flex flex-col gap-[22px] rounded-card bg-hero px-7 py-[26px] text-white shadow-[inset_0_1px_0_rgba(255,255,255,.18)]">
+    <div className="relative isolate flex flex-col gap-[22px] overflow-hidden rounded-card bg-hero px-7 py-[26px] text-white shadow-[inset_0_1px_0_rgba(255,255,255,.18),0_24px_48px_-28px_oklch(0.4_0.095_263/.7)]">
+      <span aria-hidden className="pointer-events-none absolute -top-1/2 -right-1/4 -z-10 size-[420px] animate-aurora rounded-full bg-[oklch(0.7_0.14_200/.45)] blur-[90px]" />
+      <div aria-hidden className="grid-backdrop-light pointer-events-none absolute inset-0 -z-10 bg-size-[40px_40px] mask-[radial-gradient(ellipse_60%_90%_at_100%_0%,#000,transparent_70%)]" />
       <div className="flex items-start justify-between">
         <div className="flex flex-col gap-1">
           <span className="text-[13px] text-white/72">{t('label')}</span>
           <span className="text-[64px] leading-[.95] font-light tracking-[-0.06em]">
-            {MOCK_EXAM.daysLeft}
+            <CountUp value={MOCK_EXAM.daysLeft} />
             <span className="ml-1.5 text-lg tracking-normal text-white/70">{t('days')}</span>
           </span>
         </div>
-        <span className="flex h-[26px] items-center rounded-[9px] bg-white/14 px-2.5 text-xs">{t('badge', { date: t('date'), level: MOCK_EXAM.target })}</span>
+        <span className="flex h-[26px] items-center rounded-[9px] bg-white/14 px-2.5 text-xs backdrop-blur-sm">{t('badge', { date: t('date'), level: MOCK_EXAM.target })}</span>
       </div>
       <ScaleBar value={MOCK_EXAM.currentScore} variant="onDark" labels={[t('now', { score: MOCK_EXAM.currentScore }), `${b2.code} · ${b2.min}`, `${c1.code} · ${c1.min}`]} />
     </div>
@@ -48,7 +51,7 @@ function ExamCountdown() {
 function ContinueCard() {
   const t = useTranslations('dashboard.continue');
   return (
-    <Card elevation="e1" className="flex flex-col gap-4 p-6">
+    <Card elevation="e1" interactive className="flex flex-col gap-4 p-6">
       <div className="flex items-center justify-between">
         <span className="text-[13px] text-ink-2">{t('label')}</span>
         <span className="font-mono text-xs text-ink-2">{t('left', { time: IN_PROGRESS.left })}</span>
@@ -77,7 +80,7 @@ function RecommendedTests() {
         <Link
           key={test.id}
           href={RECOMMENDED_HREF[test.kind]}
-          className="grid h-[60px] grid-cols-[1.6fr_1fr_110px_90px_32px] items-center gap-4 text-sm text-ink shadow-[0_-1px_0_var(--divider)] hover:text-ink"
+          className="group -mx-3 grid h-[60px] grid-cols-[1.6fr_1fr_110px_90px_32px] items-center gap-4 rounded-[14px] px-3 text-sm text-ink shadow-[0_-1px_0_var(--divider)] transition-[background-color,box-shadow] duration-(--t-base) hover:bg-surface-muted hover:text-ink hover:shadow-none"
         >
           <span className="flex flex-col leading-[1.35]">
             <span className="font-medium">{test.name}</span>
@@ -86,14 +89,13 @@ function RecommendedTests() {
           <span className="font-mono text-xs text-ink-2">{t(test.kind === 'drill' ? 'minutes' : 'hours', { value: test.duration })}</span>
           <Tag tone={test.tone} className="justify-self-start">{t(`tags.${test.tag}`)}</Tag>
           <span className="text-right font-mono text-[13px]">{test.result}</span>
-          <Icon as={ChevronRight} size={16} strokeWidth={1.75} className="justify-self-center text-ink-4" />
+          <Icon as={ChevronRight} size={16} strokeWidth={1.75} className="justify-self-center text-ink-4 transition-[translate,color] duration-(--t-base) ease-out-expo group-hover:translate-x-1 group-hover:text-ink-2" />
         </Link>
       ))}
     </Card>
   );
 }
 
-/** W5 — dashboard. */
 function DashboardView() {
   const t = useTranslations('dashboard');
   return (
@@ -107,11 +109,11 @@ function DashboardView() {
           </ButtonLink>
         </div>
       </div>
-      <div className="grid gap-4 xl:grid-cols-[1.25fr_1fr]">
+      <div className="stagger grid gap-4 xl:grid-cols-[1.25fr_1fr]">
         <ExamCountdown />
         <ContinueCard />
       </div>
-      <div className="grid grid-cols-2 gap-3 xl:grid-cols-4">
+      <div className="stagger grid grid-cols-2 gap-3 xl:grid-cols-4">
         {DASHBOARD_SKILLS.map((s) => <SkillStatCard key={s.skill} {...s} />)}
       </div>
       <RecommendedTests />

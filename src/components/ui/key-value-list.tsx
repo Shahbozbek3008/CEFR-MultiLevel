@@ -5,7 +5,6 @@ export type KeyValue = { label: string; value: ReactNode };
 
 type KeyValueListProps = { items: readonly KeyValue[]; variant?: 'plain' | 'muted'; className?: string };
 
-/** Label/value rows with hairline separators (plan summary W4a, receipt W20). */
 export function KeyValueList({ items, variant = 'plain', className }: KeyValueListProps) {
   const muted = variant === 'muted';
   return (

@@ -4,7 +4,6 @@ import { useTranslations } from 'next-intl';
 import { PAYMENT_METHODS } from '@/lib/mock/plans';
 import { RadioCardGroup, RadioDot } from '@/components/ui/controls';
 
-/** Click / Payme selector (redirect checkout in production). */
 export function PaymentMethods() {
   const t = useTranslations('billing');
   return (

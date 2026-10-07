@@ -1,20 +1,24 @@
 import type { ComponentProps } from 'react';
 import { cn } from '@/lib/cn';
+import { ActivePill } from '@/components/motion/active-pill';
 
-type ChipProps = ComponentProps<'button'> & { active?: boolean };
+type ChipProps = ComponentProps<'button'> & { active?: boolean; layoutId?: string };
 
-/** Filter chip: 34px pill, active = green-100 + green-text. */
-export function Chip({ active, className, ...rest }: ChipProps) {
+export function Chip({ active, layoutId, className, children, ...rest }: ChipProps) {
   return (
     <button
       type="button"
       aria-pressed={active}
       className={cn(
-        'flex h-[34px] items-center whitespace-nowrap rounded-pill px-[14px] text-[13px] transition-colors duration-(--t-fast)',
-        active ? 'bg-green-100 font-medium text-green-text' : 'bg-surface text-ink-body shadow-inset hover:bg-bg-app',
+        'relative isolate flex h-[34px] items-center whitespace-nowrap rounded-pill px-[14px] text-[13px] transition-[background-color,color,box-shadow,scale] duration-(--t-base) ease-out-expo active:scale-95',
+        active ? 'font-medium text-green-text' : 'bg-surface text-ink-body shadow-inset hover:bg-bg-app',
+        active && !layoutId && 'bg-green-100',
         className,
       )}
       {...rest}
-    />
+    >
+      {active && layoutId && <ActivePill layoutId={layoutId} className="rounded-pill bg-green-100" />}
+      {children}
+    </button>
   );
 }

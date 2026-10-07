@@ -13,9 +13,8 @@ import { LANDING_NAV, SOCIAL_LINKS } from './nav-links';
 
 const MENU_ITEMS = LANDING_NAV.filter((i) => i.key !== 'app');
 
-const squareBtn = 'grid size-10 place-items-center rounded-[12px] bg-surface text-ink shadow-inset';
+const squareBtn = 'grid size-10 place-items-center rounded-[12px] bg-surface text-ink shadow-inset transition-[scale,box-shadow] duration-(--t-base) active:scale-95';
 
-/** M2 — full-screen menu on phones (README: 26px links). */
 export function MobileMenu() {
   const t = useTranslations('landing');
   const [open, setOpen] = useState(false);
@@ -27,30 +26,30 @@ export function MobileMenu() {
         <Icon as={Equal} strokeWidth={1.75} />
       </Dialog.Trigger>
       <Dialog.Portal>
-        <Dialog.Content className="fixed inset-0 z-50 flex flex-col bg-bg" aria-describedby={undefined}>
+        <Dialog.Content className="fixed inset-0 z-50 flex flex-col bg-bg/95 backdrop-blur-xl data-[state=closed]:animate-sheet-out data-[state=open]:animate-sheet-in" aria-describedby={undefined}>
           <Dialog.Title className="sr-only">{t('header.navLabel')}</Dialog.Title>
           <div className="flex h-14 shrink-0 items-center justify-between px-5">
             <Logo size="md" />
             <Dialog.Close className={squareBtn} aria-label={t('header.menuClose')}>
-              <Icon as={X} strokeWidth={1.75} />
+              <Icon as={X} strokeWidth={1.75} className="animate-pop" />
             </Dialog.Close>
           </div>
 
           <div className="flex flex-1 flex-col overflow-y-auto px-5 pt-6 pb-10">
-            <nav className="flex flex-col">
+            <nav className="stagger flex flex-col">
               {MENU_ITEMS.map((item) => (
                 <a
                   key={item.key}
                   href={item.href}
                   onClick={close}
-                  className="flex h-[68px] items-center justify-between text-[26px] font-medium tracking-[-0.035em] text-ink shadow-[0_1px_0_var(--divider-muted)] hover:text-ink"
+                  className="group flex h-[68px] items-center justify-between text-[26px] font-medium tracking-[-0.035em] text-ink shadow-[0_1px_0_var(--divider-muted)] hover:text-ink"
                 >
                   {t(`header.navMenu.${item.key}`)}
-                  <Icon as={ChevronRight} size={20} className="text-ink-4" />
+                  <Icon as={ChevronRight} size={20} className="text-ink-4 transition-transform duration-(--t-base) group-hover:translate-x-1 group-active:translate-x-1" />
                 </a>
               ))}
             </nav>
-            <div className="flex items-center gap-[18px] pt-7 text-sm">
+            <div className="flex animate-fade-up items-center gap-[18px] pt-7 text-sm [animation-delay:320ms]">
               {SOCIAL_LINKS.map((s) => (
                 <a key={s.key} href={s.href} className="text-ink-2">{t(`footer.${s.key}`)}</a>
               ))}
@@ -58,7 +57,7 @@ export function MobileMenu() {
               <LocaleSwitcher className="ml-auto" />
             </div>
 
-            <div className="mt-auto flex flex-col gap-2 pt-8">
+            <div className="stagger mt-auto flex flex-col gap-2 pt-8">
               <a href="#download" onClick={close} className="mb-2 flex items-center gap-3 rounded-card-sm bg-surface p-[14px] text-ink shadow-e0 hover:text-ink">
                 <span className="grid size-10 place-items-center rounded-[12px] bg-green-100 text-green-text"><Icon as={Smartphone} /></span>
                 <span className="flex flex-1 flex-col leading-[1.35]">

@@ -22,7 +22,7 @@ const PARTS = ['1.1', '1.2', 'Part 2', 'Part 3'] as const;
 function Player() {
   return (
     <Card className="flex items-center gap-[18px] px-[22px] py-[18px] shadow-[0_0_0_1px_rgba(20,22,30,.05)]">
-      <button type="button" aria-label="Play" className="grid size-12 shrink-0 place-items-center rounded-full bg-action text-white shadow-[0_10px_20px_-10px_oklch(0.45_0.14_140/.7)]">
+      <button type="button" aria-label="Play" className="shine grid size-12 shrink-0 place-items-center rounded-full bg-action text-white shadow-[0_10px_20px_-10px_oklch(0.45_0.14_140/.7)] transition-[scale] duration-(--t-sheet) ease-spring hover:scale-110 active:scale-95">
         <Play size={15} fill="currentColor" strokeWidth={0} aria-hidden />
       </button>
       <Waveform bars={48} played={14} gap={3} className="h-11" />
@@ -48,7 +48,6 @@ function Feedback() {
   );
 }
 
-/** W15 — AI Speaking assessment. */
 function AiSpeakingView() {
   const t = useTranslations('aiSpeaking');
   return (
@@ -72,7 +71,7 @@ function AiSpeakingView() {
             </p>
           </Card>
         </div>
-        <div className="flex flex-col gap-3">
+        <div className="stagger flex flex-col gap-3">
           <Card elevation="e1" className="flex items-center gap-[18px] px-5 py-[18px]">
             <Gauge value={SPEAKING.score} max={SPEAKING.max} size={110} stroke={12} labelOffset={11}>
               <ScoreValue value={SPEAKING.score} max={SPEAKING.max} size={33} />
@@ -83,7 +82,7 @@ function AiSpeakingView() {
               <span className="text-[13px] text-ink-2">{t.rich('overall', { score: SPEAKING.total, mono: (c) => <span className="font-mono text-ink">{c}</span> })}</span>
             </div>
           </Card>
-          <div className="grid grid-cols-2 gap-2">
+          <div className="stagger grid grid-cols-2 gap-2">
             {SPEAKING_CRITERIA.map((c) => (
               <Inset key={c.name} className="flex flex-col gap-2.5 rounded-card-sm p-4">
                 <span className="text-[13px] text-ink-2">{c.name}</span>

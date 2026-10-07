@@ -10,9 +10,8 @@ import { Button, ButtonLink } from '@/components/ui/button';
 import { StatGrid } from '@/components/ui/stat-grid';
 import { Dialog, DialogClose, DialogContent, DialogTrigger } from '@/components/ui/dialog';
 
-const chip = 'flex h-[34px] items-center gap-2 rounded-[11px] px-3 text-[13px]';
+const chip = 'flex h-[34px] items-center gap-2 rounded-[11px] px-3 text-[13px] transition-[background-color,scale] duration-(--t-base) ease-out-expo active:scale-95';
 
-/** W11 — "Finish the test?" confirmation (Radix Dialog; ESC / outside click close). */
 export function FinishDialog() {
   const t = useTranslations('test.finish');
   const ts = useTranslations('skills');

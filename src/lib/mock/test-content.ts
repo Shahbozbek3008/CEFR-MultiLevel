@@ -1,6 +1,5 @@
 import type { Skill } from '@/lib/constants';
 
-/** Header/footer state per section of the running mock (W7–W10). */
 export const SESSION: Record<Skill, { timer: string; warning?: boolean; current: number; total: number }> = {
   listening: { timer: '24:18', current: 2, total: 6 },
   reading: { timer: '41:05', current: 3, total: 5 },
@@ -8,7 +7,6 @@ export const SESSION: Record<Skill, { timer: string; warning?: boolean; current:
   speaking: { timer: '00:24', warning: true, current: 3, total: 8 },
 };
 
-/** Test content is English by design (README: interface uz/ru/en, test content en). */
 export const LISTENING = {
   audio: { position: '02:14', duration: '06:10', progress: 36 },
   range: '9–14',

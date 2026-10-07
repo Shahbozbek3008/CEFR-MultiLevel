@@ -4,7 +4,6 @@ import { ChevronLeft, Flag } from 'lucide-react';
 import { Icon } from '@/components/ui/icon';
 import { Button, ButtonLink } from '@/components/ui/button';
 
-/** README test footer (76px): start · centre · end. */
 export function TestFooter({ start, center, end }: { start?: ReactNode; center?: ReactNode; end?: ReactNode }) {
   return (
     <footer className="grid h-(--test-footer-h) shrink-0 grid-cols-[1fr_auto_1fr] items-center bg-surface px-6 shadow-[0_-1px_0_rgba(20,22,30,.06)]">

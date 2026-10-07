@@ -2,7 +2,6 @@ import type { ReactNode } from 'react';
 import { initLocale, type LocaleParams } from '@/lib/i18n';
 import { Sidebar } from '@/components/layout/sidebar';
 
-/** README: `app/layout` — 248px sidebar + main on `--bg-app`. */
 export default async function ShellLayout({ children, params }: { children: ReactNode; params: LocaleParams }) {
   await initLocale(params);
   return (

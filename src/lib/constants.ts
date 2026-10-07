@@ -19,7 +19,6 @@ export const LEVELS = [
 ] as const;
 export type LevelCode = (typeof LEVELS)[number]['code'];
 
-/** Segments of the 0–75 scale bar: <B1 · B1 · B2 · C1 (README: 38fr 13fr 14fr 10fr). */
 export const SCALE_SEGMENTS = [38, 13, 14, 10] as const;
 
 export const ROUTES = {

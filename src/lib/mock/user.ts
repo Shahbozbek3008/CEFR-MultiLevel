@@ -6,7 +6,6 @@ export const MOCK_USER = {
   initial: 'A',
   phone: '90 123 45 67',
   memberSince: '2026-07-01',
-  /** Design states: the dashboard sample shows a fresh free account, every other screen a Pro subscriber. */
   planByRoute: (pathname: string): Plan => (pathname === '/app' ? 'free' : 'pro'),
 } as const;
 

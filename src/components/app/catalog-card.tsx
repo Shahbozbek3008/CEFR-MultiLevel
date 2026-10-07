@@ -34,11 +34,10 @@ function Footer({ test }: { test: CatalogTest }) {
   }
 }
 
-/** W16 — test card in the catalog grid. */
 export function CatalogCard({ test }: { test: CatalogTest }) {
   const t = useTranslations('catalog');
   return (
-    <Card className="flex min-h-[200px] flex-col gap-[18px] p-[22px] shadow-[0_0_0_1px_rgba(20,22,30,.05)]">
+    <Card interactive className="flex min-h-[200px] flex-col gap-[18px] p-[22px] shadow-[0_0_0_1px_rgba(20,22,30,.05)]">
       <div className="flex items-start justify-between">
         <Tag tone={STATUS_TONE[test.status]}>{t(`status.${test.status}`)}</Tag>
         <span className="font-mono text-xs text-ink-3">{test.duration}</span>

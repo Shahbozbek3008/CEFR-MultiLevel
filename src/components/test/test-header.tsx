@@ -8,9 +8,8 @@ import { SectionStepper } from './section-stepper';
 import { TimerPill } from './timer-pill';
 import { FinishDialog } from './finish-dialog';
 
-const circle = 'grid size-10 shrink-0 place-items-center rounded-full bg-surface text-ink-body shadow-inset hover:bg-bg-app hover:text-ink';
+const circle = 'grid size-10 shrink-0 place-items-center rounded-full bg-surface text-ink-body shadow-inset transition-[background-color,rotate] duration-(--t-sheet) ease-spring hover:rotate-90 hover:bg-bg-app hover:text-ink';
 
-/** README test header (68px): close · title · stepper · timer · finish. */
 export function TestHeader({ testName, section }: { testName: string; section: Skill }) {
   const t = useTranslations('test');
   const s = SESSION[section];

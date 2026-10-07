@@ -9,7 +9,6 @@ export type PlanInfo = {
   price: number;
   perMonth?: number;
   discount?: number;
-  /** Price before discount (order summary). */
   fullPrice?: number;
   features: readonly PlanFeature[];
 };

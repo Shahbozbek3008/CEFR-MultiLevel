@@ -44,15 +44,14 @@ export function WritingTask() {
   );
 }
 
-/** README Writing: 2s debounced autosave, "draft saved N seconds ago", live word count. */
 export function WritingEditor() {
   const t = useTranslations('test.writing');
   return (
-    <div className="flex min-h-0 flex-col rounded-card bg-surface shadow-focus">
+    <div className="flex min-h-0 flex-col rounded-card bg-surface shadow-focus transition-shadow duration-(--t-sheet) focus-within:shadow-[inset_0_0_0_1.5px_var(--green-500),0_0_0_6px_oklch(0.6_0.16_138/.12),0_24px_48px_-28px_oklch(0.45_0.14_140/.35)]">
       <div className="flex h-[52px] items-center gap-1 px-5 text-ink-2 shadow-[0_1px_0_var(--divider)]">
         <IconButton icon={Undo2} label={t('undo')} size="sm" className="size-[34px]" />
         <span className="ml-auto flex items-center gap-1.5 text-xs" aria-live="polite">
-          <Icon as={Check} size={13} strokeWidth={2.2} className="text-success" />
+          <Icon as={Check} size={13} strokeWidth={2.2} className="animate-pop text-success" />
           {t('saved', { seconds: WRITING.savedSecondsAgo })}
         </span>
       </div>

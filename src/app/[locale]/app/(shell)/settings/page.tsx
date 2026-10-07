@@ -110,7 +110,6 @@ function PreferencesCard() {
   );
 }
 
-/** W18 — profile & settings. */
 function SettingsView() {
   const t = useTranslations('settings');
   return (

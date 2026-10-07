@@ -14,16 +14,17 @@ import { SegmentedControl } from '@/components/ui/segmented-control';
 import { AppMain } from '@/components/layout/page-header';
 import { ResultsHeader } from '@/components/app/results-header';
 import { AnnotatedText } from '@/components/app/annotated-text';
+import { CountUp } from '@/components/motion/count-up';
 
 export const generateMetadata = metadataTitle('aiWriting.title');
 
-/** Blue hero strip: big score + verdict (W14). */
 function ScoreBanner() {
   const t = useTranslations('aiWriting');
   return (
-    <div className="flex items-center gap-5 rounded-card bg-hero px-[22px] py-5 text-white shadow-[inset_0_1px_0_rgba(255,255,255,.18)]">
+    <div className="relative isolate flex items-center gap-5 overflow-hidden rounded-card bg-hero px-[22px] py-5 text-white shadow-[inset_0_1px_0_rgba(255,255,255,.18)]">
+      <span aria-hidden className="pointer-events-none absolute -top-1/2 -right-1/4 -z-10 size-72 animate-aurora rounded-full bg-[oklch(0.7_0.14_200/.45)] blur-[80px]" />
       <span className="flex items-baseline gap-1.5">
-        <span className="text-[52px] leading-[.9] font-light tracking-[-0.06em]">{ESSAY.score}</span>
+        <span className="text-[52px] leading-[.9] font-light tracking-[-0.06em]"><CountUp value={ESSAY.score} /></span>
         <span className="font-mono text-[13px] text-white/60">/{MAX_SCORE}</span>
       </span>
       <span className="flex flex-col gap-1 text-[13px] leading-[1.45] text-white/85">
@@ -42,7 +43,8 @@ function Corrections() {
       {ESSAY.corrections.map((c, i) => (
         <div
           key={c.from}
-          className={cn('flex flex-col gap-1.5 rounded-2xl px-4 py-[14px]', i === 0 ? 'bg-surface shadow-[inset_0_0_0_1.5px_var(--error-text)]' : 'bg-surface-muted')}
+          style={{ animationDelay: `${200 + i * 90}ms` }}
+          className={cn('flex animate-fade-up flex-col gap-1.5 rounded-2xl px-4 py-[14px] transition-[translate,box-shadow] duration-(--t-base) ease-out-expo hover:-translate-y-0.5', i === 0 ? 'bg-surface shadow-[inset_0_0_0_1.5px_var(--error-text)]' : 'bg-surface-muted')}
         >
           <Tag tone={c.kind === 'grammar' ? 'error' : 'warning'} size="sm" className="self-start">{t(`kinds.${c.kind}`)}</Tag>
           <Correction from={c.from} to={c.to} />
@@ -53,7 +55,6 @@ function Corrections() {
   );
 }
 
-/** W14 — AI Writing assessment. */
 function AiWritingView() {
   const t = useTranslations('aiWriting');
   return (
@@ -78,7 +79,7 @@ function AiWritingView() {
             {ESSAY.paragraphs.map((p, i) => <p key={i} className="m-0"><AnnotatedText segments={p} /></p>)}
           </div>
         </Card>
-        <div className="flex flex-col gap-3">
+        <div className="stagger flex flex-col gap-3">
           <ScoreBanner />
           <CriteriaList items={WRITING_CRITERIA} className="rounded-card bg-surface px-5 py-1 shadow-[0_0_0_1px_rgba(20,22,30,.05)]" />
           <Corrections />

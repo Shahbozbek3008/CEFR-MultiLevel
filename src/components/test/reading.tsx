@@ -7,7 +7,6 @@ import { SegmentedControl } from '@/components/ui/segmented-control';
 import { AnnotatedText } from '@/components/app/annotated-text';
 import { TfngQuestion } from './tfng-question';
 
-/** README Reading: highlight toolbar (2 colours, note, clear) floats above the text, `--e2`. */
 function HighlightToolbar() {
   const t = useTranslations('test.reading');
   return (

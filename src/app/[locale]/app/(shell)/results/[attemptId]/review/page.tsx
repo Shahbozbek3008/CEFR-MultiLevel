@@ -39,12 +39,13 @@ function AnswerGrid() {
         ]}
       />
       <div className="grid grid-cols-7 gap-1.5">
-        {LISTENING_REVIEW.map((q) => (
+        {LISTENING_REVIEW.map((q, i) => (
           <button
             key={q.n}
             type="button"
             aria-current={q.n === REVIEW_FOCUS.n || undefined}
-            className={cn('grid h-[38px] place-items-center rounded-[11px] font-mono text-xs', CELL[q.status], q.n === REVIEW_FOCUS.n && 'shadow-[inset_0_0_0_1.5px_var(--error-text),0_0_0_3px_oklch(0.6_0.17_28/.12)]')}
+            style={{ animationDelay: `${i * 18}ms` }}
+            className={cn('grid h-[38px] animate-pop place-items-center rounded-[11px] font-mono text-xs transition-[scale,box-shadow] duration-(--t-base) ease-spring hover:scale-110', CELL[q.status], q.n === REVIEW_FOCUS.n && 'shadow-[inset_0_0_0_1.5px_var(--error-text),0_0_0_3px_oklch(0.6_0.17_28/.12)]')}
           >
             {q.n}
           </button>
@@ -74,10 +75,10 @@ function Explanation() {
         </button>
       </div>
       <span className="text-[22px] tracking-[-0.02em]">{q.prompt}</span>
-      <div className="grid grid-cols-2 gap-2.5">
+      <div className="stagger grid grid-cols-2 gap-2.5">
         <div className="flex flex-col gap-1 rounded-2xl bg-error-50 px-[18px] py-4">
           <span className="text-xs text-error-text">{t('yourAnswer')}</span>
-          <span className="font-mono text-2xl text-error-text line-through">{q.answer}</span>
+          <span className="font-mono text-2xl text-error-text line-through decoration-error/60">{q.answer}</span>
         </div>
         <div className="flex flex-col gap-1 rounded-2xl bg-success-50 px-[18px] py-4">
           <span className="text-xs text-success">{t('correctAnswer')}</span>
@@ -100,7 +101,6 @@ function Explanation() {
   );
 }
 
-/** W13 — per-question review. */
 function ReviewView() {
   const t = useTranslations('review');
   const ts = useTranslations('skills');

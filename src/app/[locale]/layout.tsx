@@ -5,6 +5,7 @@ import { getTranslations } from 'next-intl/server';
 import { routing } from '@/i18n/routing';
 import { geist, geistMono } from '@/lib/fonts';
 import { initLocale, resolveLocale, type LocaleParams } from '@/lib/i18n';
+import { MotionProvider } from '@/components/motion/motion-provider';
 import '@/styles/globals.css';
 
 export function generateStaticParams() {
@@ -27,7 +28,9 @@ export default async function LocaleLayout({ children, params }: { children: Rea
   return (
     <html lang={locale} className={`${geist.variable} ${geistMono.variable}`}>
       <body>
-        <NextIntlClientProvider>{children}</NextIntlClientProvider>
+        <NextIntlClientProvider>
+          <MotionProvider>{children}</MotionProvider>
+        </NextIntlClientProvider>
       </body>
     </html>
   );

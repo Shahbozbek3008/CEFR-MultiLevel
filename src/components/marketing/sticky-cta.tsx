@@ -8,7 +8,6 @@ import { ButtonLink } from '@/components/ui/button';
 
 const SHOW_AFTER = 560;
 
-/** M3 — floating CTA bar on phones once the hero is scrolled past. */
 export function StickyCta() {
   const t = useTranslations('landing.sticky');
   const [visible, setVisible] = useState(false);
