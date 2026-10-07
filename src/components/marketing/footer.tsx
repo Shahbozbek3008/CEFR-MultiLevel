@@ -57,7 +57,7 @@ export function MarketingFooter() {
         </div>
         <div className="flex flex-col-reverse gap-4 pt-6 text-[13px] text-ink-3 shadow-[0_-1px_0_var(--divider-page)] md:flex-row md:items-center md:justify-between">
           <span>© 2026 CEFR Mock. {tf('rights')}</span>
-          <LocaleSwitcher />
+          <LocaleSwitcher side="top" />
         </div>
       </div>
       <Reveal y={40} aria-hidden className="pointer-events-none mx-auto -mb-[0.22em] max-w-page px-5 text-center text-[clamp(64px,17vw,220px)] leading-[0.8] font-medium tracking-[-0.07em] text-transparent select-none md:px-8">

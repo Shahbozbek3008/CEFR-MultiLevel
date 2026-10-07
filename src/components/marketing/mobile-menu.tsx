@@ -54,7 +54,7 @@ export function MobileMenu() {
                 <a key={s.key} href={s.href} className="text-ink-2">{t(`footer.${s.key}`)}</a>
               ))}
               <a href="#faq" onClick={close} className="text-ink-2">{t('footer.help')}</a>
-              <LocaleSwitcher className="ml-auto" />
+              <LocaleSwitcher variant="compact" side="top" className="ml-auto" />
             </div>
 
             <div className="stagger mt-auto flex flex-col gap-2 pt-8">

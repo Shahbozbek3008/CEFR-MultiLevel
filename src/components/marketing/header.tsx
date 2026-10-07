@@ -29,7 +29,7 @@ export function MarketingHeader() {
         />
 
         <div className="ml-auto flex items-center gap-1.5">
-          <LocaleSwitcher className="mr-2 max-md:hidden" />
+          <LocaleSwitcher variant="compact" className="mr-1 max-md:hidden" />
           <ButtonLink href={ROUTES.login} variant="ghost" size="xs" className="h-9 rounded-sm px-3 md:h-[38px] md:rounded-[11px] md:px-[14px]">
             {t('login')}
           </ButtonLink>

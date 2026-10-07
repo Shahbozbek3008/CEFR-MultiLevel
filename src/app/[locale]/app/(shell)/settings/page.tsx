@@ -101,7 +101,7 @@ function PreferencesCard() {
         <Switch label={t('reminder')} defaultChecked />
       </SettingRow>
       <SettingRow title={t('language')} description={t('languageHint')}>
-        <LocaleSwitcher className="h-[38px] rounded-[12px]" />
+        <LocaleSwitcher className="h-[38px] rounded-[12px] px-3 shadow-inset" />
       </SettingRow>
       <SettingRow title={t('theme')} description={t('themeHint')}>
         <SegmentedControl label={t('theme')} defaultValue="light" className="w-[260px]" options={(['light', 'dark', 'system'] as const).map((v) => ({ value: v, label: t(`themes.${v}`) }))} />

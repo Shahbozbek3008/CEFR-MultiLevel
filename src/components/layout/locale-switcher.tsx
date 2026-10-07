@@ -1,40 +1,76 @@
 'use client';
 
-import { useId, useTransition } from 'react';
+import { useTransition } from 'react';
 import { useLocale, useTranslations } from 'next-intl';
+import { DropdownMenu } from 'radix-ui';
+import { Check, ChevronsUpDown, Globe } from 'lucide-react';
 import { usePathname, useRouter } from '@/i18n/navigation';
 import { routing, type Locale } from '@/i18n/routing';
 import { cn } from '@/lib/cn';
-import { ActivePill } from '@/components/motion/active-pill';
+import { Icon } from '@/components/ui/icon';
 
-export function LocaleSwitcher({ className }: { className?: string }) {
+const NAMES: Record<Locale, string> = {
+  uz: "O'zbekcha",
+  ru: 'Русский',
+  en: 'English',
+};
+
+type LocaleSwitcherProps = {
+  variant?: 'compact' | 'full';
+  align?: 'start' | 'end';
+  side?: 'top' | 'bottom';
+  className?: string;
+};
+
+export function LocaleSwitcher({ variant = 'full', align = 'end', side = 'bottom', className }: LocaleSwitcherProps) {
   const t = useTranslations('common');
-  const locale = useLocale();
+  const locale = useLocale() as Locale;
   const pathname = usePathname();
   const router = useRouter();
   const [pending, startTransition] = useTransition();
-  const layoutId = useId();
 
-  const change = (next: Locale) => startTransition(() => router.replace(pathname, { locale: next }));
+  const change = (next: string) => {
+    if (next !== locale) startTransition(() => router.replace(pathname, { locale: next as Locale }));
+  };
 
   return (
-    <div role="group" aria-label={t('language')} className={cn('flex h-[30px] items-center rounded-sm bg-seg-track p-[3px] text-xs transition-opacity', pending && 'opacity-70', className)}>
-      {routing.locales.map((l) => (
-        <button
-          key={l}
-          type="button"
-          lang={l}
-          aria-pressed={l === locale}
-          onClick={() => change(l)}
-          className={cn(
-            'relative isolate h-full rounded-[7px] px-2 font-mono uppercase transition-colors duration-(--t-base)',
-            l === locale ? 'font-medium text-ink' : 'text-ink-2 hover:text-ink',
-          )}
+    <DropdownMenu.Root modal={false}>
+      <DropdownMenu.Trigger
+        aria-label={t('language')}
+        className={cn(
+          'inline-flex h-8 shrink-0 items-center gap-1.5 rounded-[9px] px-2 text-[13px] text-ink-2 transition-colors duration-(--t-fast) outline-none hover:bg-hover hover:text-ink focus-visible:shadow-focus data-[state=open]:bg-hover data-[state=open]:text-ink',
+          pending && 'opacity-60',
+          className,
+        )}
+      >
+        <Icon as={Globe} size={14} strokeWidth={1.6} />
+        <span>{variant === 'compact' ? locale.toUpperCase() : NAMES[locale]}</span>
+        <Icon as={ChevronsUpDown} size={12} strokeWidth={1.6} className="text-ink-3" />
+      </DropdownMenu.Trigger>
+      <DropdownMenu.Portal>
+        <DropdownMenu.Content
+          align={align}
+          side={side}
+          sideOffset={6}
+          className="z-50 min-w-[148px] origin-(--radix-dropdown-menu-content-transform-origin) rounded-[11px] bg-surface p-1 shadow-[0_0_0_1px_rgba(20,22,30,.08),0_12px_32px_-12px_rgba(20,22,30,.22)] data-[state=closed]:animate-menu-out data-[state=open]:animate-menu-in"
         >
-          {l === locale && <ActivePill layoutId={layoutId} className="rounded-[7px] bg-surface shadow-[0_1px_2px_rgba(20,22,30,.08)]" />}
-          {l}
-        </button>
-      ))}
-    </div>
+          <DropdownMenu.RadioGroup value={locale} onValueChange={change}>
+            {routing.locales.map((l) => (
+              <DropdownMenu.RadioItem
+                key={l}
+                value={l}
+                lang={l}
+                className="flex h-8 cursor-pointer items-center justify-between gap-4 rounded-[7px] px-2.5 text-[13px] text-ink-2 outline-none select-none data-highlighted:bg-hover data-highlighted:text-ink data-[state=checked]:text-ink"
+              >
+                {NAMES[l]}
+                <DropdownMenu.ItemIndicator>
+                  <Icon as={Check} size={14} strokeWidth={2} className="text-ink" />
+                </DropdownMenu.ItemIndicator>
+              </DropdownMenu.RadioItem>
+            ))}
+          </DropdownMenu.RadioGroup>
+        </DropdownMenu.Content>
+      </DropdownMenu.Portal>
+    </DropdownMenu.Root>
   );
 }

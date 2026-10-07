@@ -53,6 +53,8 @@
   --animate-overlay-out: fade-out 0.2s ease-in forwards;
   --animate-dialog-in: dialog-in 0.5s var(--ease-out);
   --animate-dialog-out: dialog-out 0.2s ease-in forwards;
+  --animate-menu-in: menu-in 0.32s var(--ease-out);
+  --animate-menu-out: menu-out 0.16s ease-in forwards;
   --animate-sheet-in: sheet-in 0.55s var(--ease-out);
   --animate-sheet-out: fade-out 0.2s ease-in forwards;
   --animate-accordion-down: accordion-down 0.42s var(--ease-out);
@@ -104,6 +106,12 @@
   }
   @keyframes dialog-in {
     from { opacity: 0; scale: 0.96; translate: 0 10px; filter: blur(4px); }
+  }
+  @keyframes menu-in {
+    from { opacity: 0; scale: 0.96; translate: 0 -4px; }
+  }
+  @keyframes menu-out {
+    to { opacity: 0; scale: 0.97; }
   }
   @keyframes dialog-out {
     to { opacity: 0; scale: 0.97; translate: 0 6px; }
