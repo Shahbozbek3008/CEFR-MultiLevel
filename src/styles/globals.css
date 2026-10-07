@@ -1,0 +1,53 @@
+/* Tailwind v4 — tokens.css is the single source of truth */
+@import "tailwindcss";
+@import "./tokens.css";
+
+@theme inline {
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+  --color-bg: var(--bg); --color-bg-app: var(--bg-app); --color-bg-sidebar: var(--bg-sidebar); --color-surface: var(--surface);
+  --color-surface-muted: var(--surface-muted); --color-surface-sunken: var(--surface-sunken); --color-track: var(--track);
+  --color-seg-track: var(--seg-track); --color-hover: var(--hover); --color-wave-idle: var(--wave-idle);
+  --color-ink: var(--text); --color-ink-2: var(--text-2); --color-ink-3: var(--text-3); --color-ink-4: var(--text-4);
+  --color-ink-body: var(--text-body); --color-ink-reading: var(--text-reading); --color-ink-disabled: var(--text-disabled);
+  --color-line: var(--border); --color-line-strong: var(--border-strong);
+  --color-divider: var(--divider); --color-divider-muted: var(--divider-muted); --color-divider-page: var(--divider-page);
+  --color-green: var(--green-500); --color-green-50: var(--green-50); --color-green-100: var(--green-100); --color-green-300: var(--green-300);
+  --color-green-text: var(--green-text); --color-green-hover: var(--green-hover); --color-green-eyebrow: var(--green-eyebrow);
+  --color-blue: var(--blue-500); --color-blue-50: var(--blue-50); --color-blue-100: var(--blue-100); --color-blue-text: var(--blue-text);
+  --color-warning: var(--warning-500); --color-warning-50: var(--warning-50); --color-warning-200: var(--warning-200); --color-warning-text: var(--warning-text);
+  --color-error: var(--error-500); --color-error-50: var(--error-50); --color-error-text: var(--error-text);
+  --color-success: var(--success-text); --color-success-50: var(--success-50);
+  --color-highlight: var(--highlight);
+  --radius-chip: var(--r-chip); --radius-sm: var(--r-sm); --radius-input: var(--r-input); --radius-btn: var(--r-btn);
+  --radius-card-sm: var(--r-card-sm); --radius-card: var(--r-card); --radius-card-lg: var(--r-card-lg);
+  --radius-hero: var(--r-hero); --radius-banner: var(--r-banner); --radius-pill: var(--r-pill);
+  --shadow-e0: var(--e0); --shadow-e1: var(--e1); --shadow-e2: var(--e2); --shadow-e3: var(--e3);
+  --shadow-action: var(--shadow-action); --shadow-action-sm: var(--shadow-action-sm);
+  --shadow-selected: var(--shadow-selected); --shadow-inset: var(--inset-border); --shadow-focus: var(--focus-ring);
+  --ease-brand: var(--ease);
+  --container-page: var(--container);
+}
+
+@utility bg-action { background-image: var(--gradient-action); }
+@utility bg-hero { background-image: var(--gradient-hero); }
+@utility bg-avatar { background-image: var(--gradient-avatar); }
+@utility bg-pro { background-image: var(--gradient-pro); }
+@utility grid-backdrop {
+  background-image: linear-gradient(rgba(20,22,30,.045) 1px, transparent 1px), linear-gradient(90deg, rgba(20,22,30,.045) 1px, transparent 1px);
+}
+
+@layer base {
+  html { -webkit-text-size-adjust: 100%; }
+  body { background: var(--bg); color: var(--text); font-family: var(--font-sans); -webkit-font-smoothing: antialiased; }
+  ::selection { background: oklch(0.93 0.09 130); }
+  a { color: var(--green-text); text-decoration: none; }
+  a:hover { color: var(--green-hover); }
+  :focus-visible { outline: none; box-shadow: var(--focus-ring); }
+  h1, h2, h3 { text-wrap: balance; }
+  p { text-wrap: pretty; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .001ms !important; transition-duration: .001ms !important; scroll-behavior: auto !important; }
+}

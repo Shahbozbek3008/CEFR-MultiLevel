@@ -1,0 +1,534 @@
+{
+  "metadata": {
+    "title": "CEFR Mock — подготовка к экзамену CEFR в реальных условиях",
+    "description": "Полные пробные тесты, AI-оценка Writing и Speaking и объяснение каждой ошибки."
+  },
+  "common": {
+    "language": "Язык",
+    "examDate": "1 ноября 2026"
+  },
+  "skills": {
+    "listening": "Listening",
+    "reading": "Reading",
+    "writing": "Writing",
+    "speaking": "Speaking"
+  },
+  "calendar": {
+    "weekdays": "Пн,Вт,Ср,Чт,Пт,Сб,Вс",
+    "months": "Январь,Февраль,Март,Апрель,Май,Июнь,Июль,Август,Сентябрь,Октябрь,Ноябрь,Декабрь",
+    "monthTitle": "{month} {year}",
+    "prev": "Предыдущий месяц",
+    "next": "Следующий месяц",
+    "official": "Официальные даты экзамена",
+    "selected": "Выбрано"
+  },
+  "app": {
+    "nav": {
+      "label": "Главное меню",
+      "home": "Главная",
+      "tests": "Тесты",
+      "progress": "Прогресс",
+      "profile": "Профиль"
+    },
+    "upsell": {
+      "title": "Перейдите на Pro",
+      "text": "Безлимитные пробные тесты и AI-оценка.",
+      "cta": "Смотреть тарифы"
+    },
+    "plan": {
+      "free": "Бесплатный тариф",
+      "pro": "Pro · 3 месяца"
+    }
+  },
+  "landing": {
+    "header": {
+      "navLabel": "Разделы страницы",
+      "nav": {
+        "format": "Формат",
+        "ai": "AI-оценка",
+        "pricing": "Цены",
+        "app": "Приложение",
+        "faq": "Вопросы"
+      },
+      "navMenu": {
+        "format": "Формат экзамена",
+        "ai": "AI-оценка",
+        "pricing": "Цены",
+        "faq": "Вопросы"
+      },
+      "login": "Войти",
+      "start": "Начать бесплатно",
+      "menuOpen": "Открыть меню",
+      "menuClose": "Закрыть меню"
+    },
+    "menu": {
+      "download": "Скачайте приложение",
+      "platforms": "iOS и Android"
+    },
+    "footer": {
+      "terms": "Условия",
+      "privacy": "Конфиденциальность",
+      "telegram": "Telegram",
+      "instagram": "Instagram",
+      "help": "Помощь"
+    },
+    "hero": {
+      "announcement": "Обновлено под официальный формат сентября",
+      "announcementShort": "Обновлено под официальный формат",
+      "title": "Готовьтесь к CEFR<br></br> <muted>в реальных условиях</muted><br></br> экзамена.",
+      "subtitle": "Полные пробные тесты, AI-оценка Writing и Speaking и объяснение каждой ошибки.",
+      "cta": "Бесплатный тест",
+      "how": "Как это работает · 1 мин",
+      "noCard": "Карта не нужна",
+      "platforms": "iOS · Android · Web",
+      "aiFix": "AI-исправление",
+      "growth": "за 3 месяца",
+      "phone": {
+        "title": "Результат",
+        "level": "B2 · Upper-Intermediate",
+        "levelShort": "B2 · Upper-Int."
+      }
+    },
+    "format": {
+      "eyebrow": "Формат экзамена",
+      "title": "Четыре раздела. <muted>Как на экзамене.</muted>",
+      "text": "Время, типы вопросов и шкала 0–75 соответствуют официальным требованиям. В реальном режиме аудио звучит один раз, таймер не останавливается.",
+      "realMode": "Реальный режим",
+      "note": "Заметка",
+      "cards": {
+        "listening": { "meta": "35 мин · 6 частей · 35 вопросов", "title": "Listening", "desc": "Аудио один раз, без пауз. Как в экзаменационном зале." },
+        "reading": { "meta": "60 мин · 5 частей · 35 вопросов", "title": "Reading", "desc": "Выделяйте текст и оставляйте заметки." },
+        "writing": { "meta": "60 мин · 2 задания", "title": "Writing", "desc": "Автосохранение и живой счётчик слов." },
+        "speaking": { "meta": "~15 мин · 3 части", "title": "Speaking", "desc": "Таймер подготовки, запись и транскрипт." }
+      }
+    },
+    "ai": {
+      "eyebrow": "AI-оценка",
+      "title": "Оценка за две минуты. <muted>С разбором каждой ошибки.</muted>",
+      "text": "Баллы по официальным критериям и конкретные рекомендации на понятном языке.",
+      "points": {
+        "criteria": { "title": "Баллы по 4 критериям", "desc": "Task achievement, coherence, lexical resource, grammar." },
+        "inline": { "title": "Ошибки прямо в тексте", "desc": "Грамматика и лексика отмечены отдельно, с исправлением." },
+        "transcript": { "title": "Транскрипт Speaking", "desc": "Советы по паузам, темпу и произношению." }
+      },
+      "card": {
+        "task": "Writing · Task 2",
+        "level": "B2 · средний уровень",
+        "summaryLead": "Сильное содержание.",
+        "summary": "Повысьте грамматическую точность.",
+        "fixNote": "— \"people\" во множественном числе"
+      }
+    },
+    "steps": {
+      "eyebrow": "Как это работает",
+      "title": "От цели к результату. <muted>Три шага.</muted>",
+      "items": {
+        "goal": { "title": "Поставьте цель", "desc": "Ежедневный план строится по уровню и дате экзамена." },
+        "test": { "title": "Пройдите пробный тест", "desc": "Реальное время, реальный формат. Ответы сохраняются даже офлайн." },
+        "review": { "title": "Работайте над ошибками", "desc": "Закрывайте слабые места с разбором вопросов и AI-советами." }
+      }
+    },
+    "pricing": {
+      "eyebrow": "Цены",
+      "title": "Сколько осталось до экзамена?",
+      "text": "Click или Payme · отмена в любое время"
+    },
+    "faq": {
+      "eyebrow": "Вопросы",
+      "title": "Частые вопросы",
+      "help": "Не нашли ответ? <link>Напишите в Telegram</link>",
+      "items": {
+        "format": { "q": "Насколько тесты соответствуют официальному экзамену?", "a": "Формат, время и типы вопросов соответствуют официальному формату CEFR Multilevel сентября 2026 года. Балл считается по шкале 0–75 и переводится в уровень." },
+        "accuracy": { "q": "Насколько точна AI-оценка?", "a": "AI оценивает по официальным критериям, и каждый балл сопровождается пояснением." },
+        "free": { "q": "Что доступно бесплатно?", "a": "Один полный пробный тест, упражнения по каждому разделу и разбор результата. Карта не нужна." },
+        "offline": { "q": "Пропадут ли ответы, если отключится интернет?", "a": "Нет. Каждый ответ сразу сохраняется на устройстве и отправляется, когда связь восстановится." }
+      }
+    },
+    "cta": {
+      "title": "Пройдите первый пробный тест сегодня.",
+      "start": "Начать бесплатно",
+      "stores": "App Store · Google Play",
+      "note": "Карта не нужна · результат за 2 минуты",
+      "noteShort": "Бесплатно · результат за 2 минуты"
+    },
+    "sticky": {
+      "title": "Первый тест бесплатно",
+      "note": "Карта не нужна",
+      "cta": "Начать"
+    }
+  },
+  "plans": {
+    "currency": "сум",
+    "perMonth": "{price} сум / мес",
+    "perMonthUnit": "сум / мес",
+    "everyMonth": "каждый месяц",
+    "choose": "Выбрать",
+    "start": "Начать",
+    "monthly": { "name": "Месяц", "period": "мес" },
+    "quarterly": { "name": "3 месяца", "period": "3 мес" },
+    "yearly": { "name": "Год", "period": "год" },
+    "features": {
+      "allMocks": "Все пробные тесты",
+      "aiWritingSpeaking": "AI Writing и Speaking",
+      "analysis": "Подробный разбор",
+      "personalPlan": "Личный план",
+      "offline": "Офлайн-режим",
+      "unlimited": "Безлимитные пробные тесты — 40+",
+      "explanations": "Объяснение к каждому вопросу"
+    }
+  },
+  "auth": {
+    "back": "Назад",
+    "phone": "Номер телефона",
+    "sendCode": "Отправить код",
+    "or": "или",
+    "google": "Google",
+    "apple": "Apple",
+    "legal": "Условия · Конфиденциальность",
+    "login": {
+      "title": "Добро пожаловать",
+      "subtitle": "Введите номер телефона — мы отправим код подтверждения.",
+      "noAccount": "Нет аккаунта? <link>Начать бесплатно</link>",
+      "showcase": {
+        "label": "Последний результат",
+        "level": "B2 · Upper-Intermediate",
+        "growth": "+14 · за 3 месяца",
+        "sync": "Прогресс, черновики и результаты синхронизируются на всех ваших устройствах."
+      }
+    },
+    "verify": {
+      "title": "Введите код",
+      "text": "На номер <mono>{phone}</mono> отправлен 6-значный код.",
+      "change": "Изменить",
+      "otpLabel": "Код подтверждения",
+      "confirm": "Подтвердить",
+      "noCode": "Не пришёл код?",
+      "resend": "Отправить снова"
+    }
+  },
+  "onboarding": {
+    "step": "{current} / {total}",
+    "haveAccount": "Уже есть аккаунт? <link>Войти</link>",
+    "continue": "Продолжить",
+    "goal": {
+      "title": "Какой уровень вы хотите получить?",
+      "text": "План подготовки строится под этот уровень. Его можно изменить позже.",
+      "levels": { "B1": "Intermediate", "B2": "Upper-Intermediate", "C1": "Advanced" },
+      "range": "{min}–{max} баллов"
+    },
+    "date": {
+      "title": "Когда экзамен?",
+      "text": "Составим недельный план и напоминания по дате.",
+      "daily": "Время в день",
+      "options": { "m15": "15 мин", "m30": "30 мин", "h1": "1 час", "h2": "2 часа+" },
+      "planLabel": "Ваш план",
+      "planValue": "{days} дн. · {tests} пробных тестов",
+      "target": "{level} · {min}+"
+    },
+    "account": {
+      "title": "Сохраним ваш план",
+      "text": "Создайте аккаунт, чтобы прогресс синхронизировался на всех устройствах.",
+      "name": "Имя",
+      "smsHint": "Код подтверждения придёт по SMS",
+      "consent": "Я согласен с <terms>условиями использования</terms> и <privacy>политикой конфиденциальности</privacy>",
+      "summary": {
+        "title": "Ваш план",
+        "goal": "Цель",
+        "goalValue": "{level} · {min}+ баллов",
+        "exam": "Экзамен",
+        "examValue": "{date} · {days} дн.",
+        "daily": "В день",
+        "dailyValue": "{minutes} минут",
+        "plan": "План",
+        "planValue": "{tests} пробных тестов · {drills} упражнения",
+        "tip": "Первый пробный тест бесплатный — определим ваш стартовый уровень."
+      }
+    },
+    "done": {
+      "title": "Номер подтверждён",
+      "text": "<mono>{phone}</mono> · аккаунт создан. Ваш план готов.",
+      "stats": { "days": "дней", "tests": "пробных тестов", "minutes": "мин / день" },
+      "startFree": "Начать бесплатный тест",
+      "toDashboard": "Перейти в панель"
+    }
+  },
+  "dashboard": {
+    "metaTitle": "Панель",
+    "today": "Вторник, 29 сентября",
+    "greeting": "Добрый день, {name}",
+    "search": "Поиск теста",
+    "newTest": "Новый тест",
+    "countdown": {
+      "label": "До экзамена",
+      "days": "дн.",
+      "badge": "{date} · Цель {level}",
+      "date": "1 ноября",
+      "now": "Сейчас {score}"
+    },
+    "continue": {
+      "label": "Продолжить",
+      "left": "осталось {time}",
+      "meta": "{section} · часть {part} · {answered}/{total} вопросов",
+      "cta": "Продолжить"
+    },
+    "recommended": {
+      "title": "Рекомендованные тесты",
+      "catalog": "Каталог",
+      "kinds": { "full": "Полный · 4 раздела", "drill": "Упражнение · AI-оценка", "done": "Полный · 22 сентября" },
+      "minutes": "{value} мин",
+      "hours": "{value} ч",
+      "tags": { "new": "Новый", "weak": "Слабый раздел", "done": "Завершён" }
+    }
+  },
+  "results": {
+    "metaTitle": "Результат",
+    "viewAnalysis": "Смотреть разбор",
+    "breadcrumbTests": "Тесты",
+    "breadcrumbAttempt": "{name} · {date}",
+    "attemptDate": "22 сентября",
+    "title": "Результат {name}",
+    "share": "Поделиться",
+    "detailed": "Подробный разбор",
+    "score": {
+      "level": "B2 · Upper-Intermediate",
+      "toNext": "До {level} <mono>{points}</mono> баллов · с прошлого теста <up>+{delta}</up>"
+    },
+    "recommendation": {
+      "label": "Совет AI",
+      "title": "Writing — главная точка роста",
+      "grammar": "{score}/{max} · согласование глаголов",
+      "coherence": "{score}/{max} · связки",
+      "task1": "описание графика",
+      "cta": "Упражнение Writing"
+    }
+  },
+  "review": {
+    "title": "Подробный разбор",
+    "crumb": "Разбор",
+    "correct": "Верно",
+    "wrong": "Ошибка",
+    "skipped": "Без ответа",
+    "onlyWrong": "Только ошибки",
+    "questionWrong": "Q{n} · Ошибка",
+    "partType": "Part {part} · Note completion",
+    "listenFrom": "Слушать с {time}",
+    "yourAnswer": "Ваш ответ",
+    "correctAnswer": "Правильный ответ",
+    "explanation": "Объяснение",
+    "explanationText": "Спикер сначала называет полную цену, затем добавляет скидку для студентов. Дистрактор — первое названное число. В таких вопросах обращайте внимание на информацию после слов \"but\", \"however\", \"for students\"."
+  },
+  "aiWriting": {
+    "title": "AI-оценка Writing",
+    "improved": "Улучшенный вариант",
+    "yourText": "Ваш текст · {words} слов",
+    "lexicalCount": "Лексика · {count}",
+    "level": "B2 · средний",
+    "verdict": "Сильное содержание, низкая грамматическая точность.",
+    "corrections": "Исправления",
+    "kinds": { "grammar": "Grammar", "lexical": "Лексика" },
+    "notes": {
+      "peoplePlural": "\"people\" во множественном числе — глагол без -s.",
+      "strongerAdjective": "Более сильное прилагательное — повышает балл Lexical."
+    }
+  },
+  "aiSpeaking": {
+    "title": "AI-оценка Speaking",
+    "transcript": "Транскрипт",
+    "stats": "{words} слов · {wpm} wpm · {pauses} паузы",
+    "partScore": "Балл Part {part}",
+    "level": "B2 · стабильно",
+    "overall": "Общий Speaking: <mono>{score}/75</mono>",
+    "feedback": {
+      "clear": "Мысль ясная, примеры по теме.",
+      "fillers": "Сократите паузы \"um\", \"uh\" — начинайте с \"Well, …\".",
+      "comparative": "\"more fresh\" → \"fresher\": у коротких прилагательных -er."
+    }
+  },
+  "catalog": {
+    "title": "Тесты",
+    "count": "{total} тестов · {fresh} новых",
+    "search": "Поиск",
+    "tabs": { "full": "Полные тесты", "drills": "Упражнения" },
+    "filters": { "all": "Все", "new": "Новые", "notStarted": "Не начаты", "done": "Завершённые", "free": "Бесплатные" },
+    "status": { "new": "Новый", "inProgress": "В процессе", "done": "Завершён", "free": "Бесплатно", "pro": "Pro" },
+    "meta": {
+      "sections": "4 раздела",
+      "sectionsMonth": "4 раздела · сентябрь 2026",
+      "progress": "{section} · часть {part}",
+      "date": "22 сентября"
+    },
+    "start": "Начать",
+    "continue": "Продолжить",
+    "result": "Результат"
+  },
+  "progress": {
+    "title": "Прогресс",
+    "meta": "{count} тестов · июль — сентябрь",
+    "range": { "1m": "1 мес", "3m": "3 мес", "all": "Все" },
+    "overall": "Общий балл",
+    "toNext": "до {level} {points} баллов",
+    "months": "июль,август,сентябрь",
+    "chartLabel": "Динамика общего балла",
+    "sections": "Разделы",
+    "period": "за 3 месяца",
+    "history": "История",
+    "all": "Все"
+  },
+  "settings": {
+    "title": "Настройки",
+    "logout": "Выйти из аккаунта",
+    "cancel": "Отмена",
+    "save": "Сохранить",
+    "nav": {
+      "settings": "Настройки",
+      "profile": "Профиль",
+      "exam": "Экзамен",
+      "notifications": "Уведомления",
+      "subscription": "Подписка",
+      "security": "Безопасность"
+    },
+    "profile": {
+      "since": "С июля 2026 года",
+      "changePhoto": "Сменить фото",
+      "firstName": "Имя",
+      "lastName": "Фамилия",
+      "phone": "Телефон",
+      "verified": "Подтверждён",
+      "email": "Email",
+      "optional": "необязательно"
+    },
+    "preferences": {
+      "target": "Целевой уровень",
+      "targetHint": "План подстраивается под этот уровень",
+      "examDate": "Дата экзамена",
+      "daysLeft": "осталось {days} дн.",
+      "reminder": "Ежедневное напоминание",
+      "reminderHint": "Каждый день в {time}",
+      "language": "Язык интерфейса",
+      "languageHint": "Узбекский, русский или английский",
+      "theme": "Тема",
+      "themeHint": "Внешний вид интерфейса",
+      "themes": { "light": "Светлая", "dark": "Тёмная", "system": "Системная" }
+    }
+  },
+  "billing": {
+    "title": "CEFR Mock Pro",
+    "untilExam": "хватит до экзамена",
+    "paymentMethod": "Способ оплаты",
+    "order": "Заказ",
+    "planLine": "Pro · {plan}",
+    "discount": "Скидка",
+    "promo": "Промокод",
+    "apply": "Применить",
+    "total": "Итого",
+    "pay": "Оплатить {amount} сум",
+    "secure": "Безопасная оплата · отмена в любое время"
+  },
+  "billingSuccess": {
+    "title": "Pro активирован",
+    "text": "Все пробные тесты и AI-оценка открыты. Чек отправлен по SMS.",
+    "plan": "Тариф",
+    "planValue": "Pro · {plan}",
+    "validUntil": "Действует",
+    "validUntilValue": "до 29 декабря 2026",
+    "payment": "Оплата",
+    "paymentValue": "{method} · {amount} сум",
+    "startTest": "Начать пробный тест",
+    "receipt": "Скачать чек"
+  },
+  "pretest": {
+    "title": "Перед тестом",
+    "back": "Вернуться к тестам",
+    "crumb": "Тесты",
+    "online": "Соединение стабильно",
+    "fullMock": "Полный тест",
+    "realMode": "Реальный режим",
+    "subtitle": "Официальный формат сентября 2026 · 0–75 баллов",
+    "totalTime": "Общее время",
+    "deviceCheck": "Проверка устройства",
+    "headphones": "Наушники",
+    "listen": "Прослушать",
+    "microphone": "Микрофон",
+    "ready": "Готово",
+    "ruleAudio": "Аудио звучит один раз, без пауз.",
+    "ruleOffline": "Ответы сохраняются и на устройстве.",
+    "start": "Начать тест",
+    "sections": {
+      "partsQuestions": "{parts} частей · {questions} вопросов",
+      "tasksAi": "{tasks} задания · AI-оценка",
+      "partsAi": "{parts} части · AI-оценка",
+      "minutes": "{value} мин"
+    }
+  },
+  "test": {
+    "metaTitle": "Тест",
+    "exit": "Выйти из теста",
+    "subtitle": {
+      "listening": "Listening · Part {current} / {total}",
+      "reading": "Reading · Part {current} / {total}",
+      "writing": "Writing · Task {current} / {total}",
+      "speaking": "Speaking · Вопрос {current} / {total}"
+    },
+    "realMode": "Реальный режим",
+    "questionsRange": "Вопросы {range}",
+    "answerPlaceholder": "ответ",
+    "autoAdvance": "После окончания аудио следующая часть откроется автоматически",
+    "nextQuestion": "Следующий вопрос",
+    "next": "Далее",
+    "prev": "Назад",
+    "flag": "Отметить",
+    "navigator": {
+      "title": "Вопросы",
+      "answered": "Отвечен",
+      "empty": "Без ответа",
+      "flagged": "Отмечен"
+    },
+    "finish": {
+      "trigger": "Завершить тест",
+      "title": "Завершить тест?",
+      "text": "После завершения ответы нельзя изменить. Результат будет готов через 2 минуты.",
+      "answered": "Отвечено",
+      "flagged": "Отмечено",
+      "unanswered": "Без ответа",
+      "unansweredList": "Вопросы без ответа",
+      "back": "Вернуться к тесту",
+      "confirm": "Завершить"
+    },
+    "reading": {
+      "toolbar": "Инструменты выделения",
+      "yellow": "Выделить жёлтым",
+      "blue": "Выделить синим",
+      "note": "Заметка",
+      "clear": "Очистить",
+      "passage": "Passage {n}",
+      "fontSize": "Размер шрифта"
+    },
+    "writing": {
+      "tasks": "Задания",
+      "task2": "Task 2 · Essay",
+      "task": "Задание",
+      "minWords": "Минимальный объём",
+      "words": "{count} слов",
+      "suggestedTime": "Рекомендуемое время",
+      "minutes": "{count} мин",
+      "grading": "Оценка",
+      "gradingValue": "AI · 4 критерия",
+      "tip": "Начинайте каждый абзац с одной главной мысли — так растёт балл Coherence.",
+      "undo": "Отменить",
+      "saved": "Черновик сохранён {seconds} секунд назад",
+      "editor": "Текст ответа",
+      "paragraphs": "{count} абзаца",
+      "submit": "Сдать Writing"
+    },
+    "speaking": {
+      "imagePlaceholder": "фото · городской рынок",
+      "part": "Part {part} · Описание фото",
+      "prep": "Подготовка {seconds}с",
+      "answer": "Ответ {seconds}с",
+      "recording": "Запись",
+      "restart": "Записать заново",
+      "stop": "Остановить запись",
+      "next": "Следующий вопрос"
+    }
+  }
+}
