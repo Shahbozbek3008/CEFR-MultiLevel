@@ -25,23 +25,23 @@ function DateView() {
         text={t('date.text')}
         aside={<ExamCalendar year={2026} month={10} officialDays={[8, 15, 22, 29]} defaultSelected={1} />}
       >
-          <div className="flex flex-col gap-2.5">
-            <span className="text-[13px] font-medium">{t('date.daily')}</span>
-            <SegmentedControl
-              size="lg"
-              label={t('date.daily')}
-              defaultValue="m30"
-              options={DAILY_OPTIONS.map((o) => ({ value: o, label: t(`date.options.${o}`) }))}
-            />
+        <div className="flex flex-col gap-2.5">
+          <span className="text-[13px] font-medium">{t('date.daily')}</span>
+          <SegmentedControl
+            size="lg"
+            label={t('date.daily')}
+            defaultValue="m30"
+            options={DAILY_OPTIONS.map((o) => ({ value: o, label: t(`date.options.${o}`) }))}
+          />
+        </div>
+        <Card radius="md" className="flex items-center gap-4 rounded-[14px] px-4 py-3.5">
+          <div className="flex flex-1 flex-col gap-0.5">
+            <span className="text-xs text-ink-2">{t('date.planLabel')}</span>
+            <span className="text-[15px] font-medium">{t('date.planValue', { days: MOCK_EXAM.daysLeft, tests: MOCK_EXAM.mockTests })}</span>
           </div>
-          <Card radius="md" className="flex items-center gap-4 rounded-[14px] px-4 py-3.5">
-            <div className="flex flex-1 flex-col gap-0.5">
-              <span className="text-xs text-ink-2">{t('date.planLabel')}</span>
-              <span className="text-[15px] font-medium">{t('date.planValue', { days: MOCK_EXAM.daysLeft, tests: MOCK_EXAM.mockTests })}</span>
-            </div>
-            <Tag className="h-[26px] rounded-[9px] px-2.5 font-mono font-normal">{t('date.target', { level: target.code, min: target.min })}</Tag>
-          </Card>
-          <ButtonLink href={ROUTES.startAccount} size="md" arrow block className="h-11 rounded-[12px]">{t('continue')}</ButtonLink>
+          <Tag className="h-[26px] rounded-[9px] px-2.5 font-mono font-normal">{t('date.target', { level: target.code, min: target.min })}</Tag>
+        </Card>
+        <ButtonLink href={ROUTES.startAccount} size="md" arrow block className="h-11 rounded-[12px]">{t('continue')}</ButtonLink>
       </OnboardingSplit>
     </Stage>
   );
